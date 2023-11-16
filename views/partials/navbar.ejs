@@ -1,28 +1,65 @@
 
 <header class="header">
     <a href="#" class="logo"><i>Khmer<b>Food</b></i></a>
-    <nav class="navbar">
-        <a href="/home">Home</a>
-        <a href="/KhmerFood/views/Video.html">Video</a>
-        <a href="/tbalkhmers">Tbalkhmer</a>
-        <a href="/meatuphums">Meatuphum</a>
+    <nav class="navbar" id="menuPopup">
+        <a href="/home" id="active">Home</a>
+        <a href="/KhmerFood/views/Video.html" id="active">Video</a>
+        <a href="/tbalkhmers" id="active">Tbalkhmer</a>
+        <a href="/meatuphums" id="active">Meatuphum</a>
+        <a href="/khmerfoods" id="active">Khmerfood</a>
     </nav>
-    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" id="menuButton">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      </svg>
         <div class="sidebar">
-            <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-shopping-cart" id="count"></div>
+
+            <!-- <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="count"></div> -->
+           
             
             <% if(!currentUser) {%>
-            <a class="nav-link" href="/login">Login</a>
-            <a class="nav-link" href="/register">Sign Up</a>
+            <a class="nav-link" id="active" href="/login">Login</a>
+            <a class="nav-link" id="active" href="/register">Sign Up</a>
             <% } else {%>
-            <a class="nav-link" href="/logout">Logout</a>
+            <a class="nav-link" id="active" href="/logout">Logout</a>
             <% } %>
         </div>
-        
-
-        <!-- <div class="shopping-cart">
-            <div class="total">total:<span id="totalPrice"></span></div>
-            <button class="btn">checkout</button>
-        </div> -->
 </header>
+
+
+
+<script>
+
+document.getElementById('menuButton').addEventListener('click', function() {
+  var menuPopup = document.getElementById('menuPopup');
+  if (menuPopup.style.display === 'block' || menuPopup.style.display === '') {
+    menuPopup.style.display = 'none';
+  } else {
+    menuPopup.style.display = 'block';
+  }
+});
+
+// Close the menu when user clicks outside of it
+window.addEventListener('click', function(event) {
+  var menuPopup = document.getElementById('menuPopup');
+  var menuButton = document.getElementById('menuButton');
+  if (event.target !== menuButton && event.target !== menuPopup) {
+    menuPopup.style.display = 'none';
+  }
+});
+
+
+// Active route
+var currentLocation = window.location.href;
+var menuItem = document.querySelectorAll('a');
+var menuLength = menuItem.length;
+for (var i = 0; i < menuLength; i++) {
+  if (menuItem[i].href === currentLocation) {
+    menuItem[i].className = "active";
+  }
+}
+
+
+
+
+</script>

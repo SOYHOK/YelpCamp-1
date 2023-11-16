@@ -76,29 +76,7 @@
             justify-content: center;
         }
 
-        .view{
-            display: flex;
-            justify-content: space-around;
-            font-size: 1.5rem;
-            box-shadow: var(--box-shadow);
-            border-radius: 15px; 
-            align-items: center;
-            padding: 3rem 2rem;
         
-        }
-        .view .img-fluid{
-            height: 150px;
-            width: 270px;
-            border-radius: 15px 50px;
-
-        }
-        
-       .view #addtochart{
-        border: 1px solid var(--orange); 
-        padding: 5px 85px; 
-        border-radius: 5px 35px;
-        background-color: var(--orange);
-       }
 
 
     .ordermenu{

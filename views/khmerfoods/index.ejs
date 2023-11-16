@@ -25,9 +25,9 @@
                         </div>
                     </div>
 
-                    <div class="col">
+                    <div class="col text-center" id="title">
                         <a href="/khmerfoods/<%= khmerfood._id %>">
-                            <%= khmerfood.title %>
+                            <h2><%= khmerfood.title %></h2>
                         </a>
                     </div>
                     <div class="col">
@@ -39,7 +39,7 @@
                         <p>$<%= khmerfood.price %>
                         </p>
                     </div>
-                    <div class="mb-3 text-center">
+                    <div class="mb-3">
                         <button onclick="Addtochart()" id="addtochart">Add to Chart</button>
                    </div>
                     <div style="display: inline; text-align: start; justify-content: space-between;">

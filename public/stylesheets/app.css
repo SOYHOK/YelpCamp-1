@@ -39,10 +39,10 @@ body {
 
 
 .header {
-    position: fixed;
-    top: 0;
+    position: relative;
+    /* top: 0;
     left: 0;
-    right: 0;
+    right: 0; */
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -85,11 +85,16 @@ body {
     font-size: 1.7rem;
     margin: 0 1rem;
     color: var(--black);
-    margin-left: 30px;
+    margin-left: 5px;
 }
 
 .header .sidebar a:hover {
     color: var(--orange);
+}
+
+.header .sidebar {
+    display: flex;
+    gap: 10px;
 }
 
 /* 
@@ -105,7 +110,9 @@ body {
     text-underline-position: none;
 
 } */
-
+.header svg{
+    display: none;
+}
 
 #count{
     font-size: medium;
@@ -233,7 +240,7 @@ body {
 .container {
     display: block;
     justify-content: center;
-    padding: 10rem ;
+    padding: 5rem ;
     font-size: 1.2rem;
 
 }
@@ -338,12 +345,31 @@ body {
   
     .header {
       padding: 1rem 5%; /* Adjust header padding for smaller screens */
+      display: flex;
+      align-items: center; 
+      
+    }
+
+    .header .logo{
+        font-size: 2rem;
+    }
+    .header svg{
+        display: block;
+        font-size: 2.5rem;
+        color: var(--black);
+        cursor: pointer;
     }
   
     .header .navbar a, .header .sidebar a {
-      font-size: 1.4rem; /* Decrease font size for navigation links */
-      margin-left: 15px; /* Increase margin for better spacing */
+      font-size: 1.2rem; /* Decrease font size for navigation links */
+      margin-left: 5px; /* Increase margin for better spacing *//* Position links relative to container */
+
     }
+    .navbar{
+        display: none;
+        width: 100px;
+    }
+    
   
     .heading {
       padding-top: 3rem;
@@ -352,8 +378,9 @@ body {
     }
   
     .form-popup {
-      width: 90%; /* Make the form wider to fit better on small screens */
-      padding: 20px; /* Adjust padding */
+      width: 70%; /* Make the form wider to fit better on small screens */
+      height: 60%; /* Make form taller to fit better on small screens */
+      margin-top: 0px;
     }
   
     .form-container input, .form-container .btn {
@@ -364,6 +391,7 @@ body {
       flex-direction: column; /* Stack images vertically */
       align-items: center; /* Center items */
       margin: 2% 0; /* Adjust margin */
+      width: 60%;
     }
   
     .rest img {
@@ -374,6 +402,9 @@ body {
     .image p {
       font-size: 2rem; /* Decrease font size */
       padding-top: 20px; /* Adjust padding */
+    }
+    .heading h1{
+        font-size: 2rem;
     }
   
     .add-foods {
@@ -390,6 +421,8 @@ body {
       font-size: 2rem; /* Decrease font size */
       margin-bottom: 10px; /* Adjust margin */
     }
+
+    
   }
 
 
@@ -398,33 +431,7 @@ body {
 
 
 
-  @media (max-width: 768px) {
-    .header .logo {
-      font-size: 2.5rem; /* Decrease font size for the logo */
-    }
   
-    .header .logo i {
-      display: inline; /* Display the icon */
-      font-size: 2.5rem; /* Set the size of the icon */
-    }
-  
-    .header .logo b {
-      display: none; /* Hide the text part of the logo */
-    }
-  
-    .header .navbar a {
-      display: none; /* Hide the navigation links */
-    }
-  
-    .header .sidebar a {
-      display: none; /* Hide the sidebar links */
-    }
-  
-    #count,
-    #search-btn {
-      font-size: 2.5rem; /* Adjust font size for the icons or any other mobile-specific elements */
-    }
-  }
 
 
 

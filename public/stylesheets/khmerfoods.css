@@ -38,74 +38,6 @@ body {
 }
 
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem 8%;
-    background: white;
-    box-shadow: var(--box-shadow);
-}
-
-.header .logo {
-    font-size: 2.5rem;
-    font-weight: bolder;
-    color: var(--black);
-    text-decoration: none;
-}
-
-.header .logo i {
-    color: var(--brown);
-
-}
-
-.header .logo b {
-    color: var(--orange)
-}
-
-.header .navbar a {
-    font-size: 1.7rem;
-    margin: 0 1rem;
-    color: var(--black);
-    margin-left: 30px;
-    text-decoration: none;
-}
-
-.header .navbar a:hover {
-    color: var(--orange);
-}
-
-.header .sidebar a {
-    display: inline;
-    font-size: 1.7rem;
-    margin: 0 1rem;
-    color: var(--black);
-    margin-left: 30px;
-}
-
-.header .sidebar a:hover {
-    color: var(--orange);
-}
-
-/* 
-.header .sidebar div {
-    height: 4.5rem;
-    width: 4.5rem;
-    border-radius: 0.5rem;
-    background: #fff;
-    color: var(--black);
-    font-size: 2rem;
-    text-align: center;
-    cursor: pointer;
-    text-underline-position: none;
-
-} */
-
 
 #count{
     font-size: medium;
@@ -141,15 +73,12 @@ body {
 }
 
 .addnew{
-    margin-top: 120px;
-    margin-bottom: 20px;
-    margin-left: 40rem;
-    margin-right: 40rem;
+    margin-top: 35px;
+    align-items: center;
     box-shadow: var(--box-shadow);
     padding: 0.5rem 2.7rem;
     border-radius: 0.5rem;
-    
-    /* background: var(--light-color); */
+    width: 70%;
     
 }
 
@@ -265,8 +194,8 @@ body {
 
 }
 .addnew .img-fluid{
-    height: 320px;
-    width: 660px;
+    height: 300px;
+    width: 550px;
 }
 
 
@@ -304,40 +233,8 @@ h2{
     font-size: 2rem;
     color: var(--orange);
     padding: 1rem 0;
+    text-decoration: none;
     
-}
-
-#edit{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    box-shadow: var(--box-shadow);
-    padding: 0.5rem 2.7rem;
-    border-radius: 0.5rem;
-    
-    background: var(--light-color);
-    
-
-}
-
-#delete{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    box-shadow: var(--box-shadow);
-    padding: 0.5rem 2.7rem;
-    border-radius: 0.5rem;
-    
-    background: var(--light-color);
-    
-
-
-}
-
-/* Add New */
-
-.row{
-    width: 100%; 
-    display: flex; 
-    justify-content: center;
 }
 
 .view{
@@ -364,6 +261,80 @@ border-radius: 5px 35px;
 background-color: var(--orange);
 }
 
+#edit{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow);
+    padding: 0.5rem 2.7rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    background: var(--orange);
+    color: white;
+    margin-left: 27px;
+}
+
+#edit:hover{
+    background-color: rgb(245, 168, 15);
+    color: white;
+    border: 1px solid var(--orange);
+}
+
+#delete{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow);
+    padding: 0.5rem 2.7rem;
+    border-radius: 0.5rem;
+    color: white;
+    background: var(--brown);
+    margin-left: 10px;
+
+
+}
+#delete:hover{
+    background-color: #d33a3a;
+    color: white;
+    border: 1px solid var(--orange);
+
+}
+/* Add New */
+
+.row{
+    width: 100%; 
+    display: flex; 
+    justify-content: center;
+}
+
+.view{
+    display: flex;
+    font-size: 1.5rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 15px; 
+    align-items: center;
+    padding: 3rem 2rem;
+    text-decoration: none;
+
+}
+.view .img-fluid{
+    height: 150px;
+    width: 270px;
+    border-radius: 15px 50px;
+
+}
+
+.view #addtochart{
+padding: 5px 75px; 
+border-radius: 5px 35px;
+background-color: var(--orange);
+color: white;
+}
+.view #addtochart:hover{
+    background-color: rgb(245, 168, 15);
+    color: white;
+    border: 1px solid var(--orange);
+}
+
+
 
 .ordermenu{
 position: fixed;
@@ -382,7 +353,7 @@ margin-top: 8rem;
 
 
 
-@media screen {
+@media screen and (max-width: 768px) {
 html{
     font-size: 62.5%;
 }
@@ -435,6 +406,62 @@ html{
     align-items: center;
     margin-bottom: 1rem;
 }
+.news{
+    text-align: center;
+    margin-top: 120px;
+    
+}
+.news a{
+    text-decoration: none !important;
+    font-size: small;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s linear;
+    box-shadow: var(--box-shadow);
+    
+}
+.news a:hover{
+    background-color: var(--orange);
+    color: #fff;
+}
+h1{
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--brown);
+    margin-top: 10px;
+}
+
+h2{
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--orange);
+    padding: 1rem 0;
+    text-decoration: none;
+    
+}
+.addnew{
+    box-shadow: var(--box-shadow);
+    padding: 0.5rem 2.7rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    
+    /* background: var(--light-color); */
+    
+}
+.carousel-inner{
+    object-fit: cover;
+    border-radius: 15px;
+    /* box-shadow: var(--box-shadow); */
+}
+
+
+
+
+
 
 }
 
@@ -442,7 +469,7 @@ html{
 
 
 
-@media screen {
+@media screen and (max-width: 768px) {
     html{
         font-size: 62.5%;
     }
@@ -453,23 +480,22 @@ html{
         box-shadow: var(--box-shadow);
         padding: 0.5rem 2.7rem;
         border-radius: 0.5rem;
-        width: 60%;
+        width: 100%;
         
         /* background: var(--light-color); */
         
     }
-
     .addnew h1{
         display: block;
         text-align: center;
-        font-size: 3rem;
+        font-size: 2rem;
         color: var(--brown);
         padding: 1rem 0;
-
+    
     }
 
     .addnew label{
-        font-size: 1.5rem;
+        font-size: 1rem;
         color: var(--black);
 
     }
@@ -482,7 +508,7 @@ html{
         margin-top: 5px;
         margin-bottom: 20px;
         padding-left: 10px;
-        font-size: 1.5rem;
+        font-size: 1rem;
         color: var(--black);
         /* box-shadow: var(--box-shadow); */
     }
@@ -492,7 +518,7 @@ html{
         margin-top: 20px;
         background-color: var(--brown);
         color: white;
-        font-size: 1.5rem;
+        font-size: 1rem;
         padding: 0.5rem 1rem;
         border-radius: 5px;
         cursor: pointer; 
@@ -508,7 +534,7 @@ html{
     .addnew a{
         text-decoration: none;
         color: var(--orange);
-        font-size: 1.5rem;
+        font-size: 1rem;
         border: 1px solid var(--orange);
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
@@ -530,7 +556,7 @@ html{
         margin-top: 5px;
         margin-bottom: 20px;
         padding-left: 10px;
-        font-size: 1.5rem;
+        font-size: 1rem;
         color: var(--black);
         /* box-shadow: var(--box-shadow); */
     }
@@ -541,7 +567,7 @@ html{
     }
 
     .addnew p{
-        font-size: 1.5rem;
+        font-size: 1rem;
         color: var(--black);
         
     }
