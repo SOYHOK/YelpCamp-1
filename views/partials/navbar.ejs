@@ -1,24 +1,28 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">YelpCamp</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" href="/">Home</a>
-                <a class="nav-link" href="/campgrounds">Campgrounds</a>
-                <a class="nav-link" href="/campgrounds/new">New Campground</a>
-            </div>
-            <div class="navbar-nav ml-auto">
-                <% if(!currentUser) {%>
-                <a class="nav-link" href="/login">Login</a>
-                <a class="nav-link" href="/register">Register</a>
-                <% } else {%>
-                <a class="nav-link" href="/logout">Logout</a>
-                <% } %>
-            </div>
+
+<header class="header">
+    <a href="#" class="logo"><i>Khmer<b>Food</b></i></a>
+    <nav class="navbar">
+        <a href="/home">Home</a>
+        <a href="/KhmerFood/views/Video.html">Video</a>
+        <a href="/tbalkhmers">Tbalkhmer</a>
+        <a href="/meatuphums">Meatuphum</a>
+    </nav>
+    
+        <div class="sidebar">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="count"></div>
+            
+            <% if(!currentUser) {%>
+            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/register">Sign Up</a>
+            <% } else {%>
+            <a class="nav-link" href="/logout">Logout</a>
+            <% } %>
         </div>
-    </div>
-</nav>
+        
+
+        <!-- <div class="shopping-cart">
+            <div class="total">total:<span id="totalPrice"></span></div>
+            <button class="btn">checkout</button>
+        </div> -->
+</header>

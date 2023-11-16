@@ -13,9 +13,49 @@
                 if (!form.checkValidity()) {
                     event.preventDefault()
                     event.stopPropagation()
+                } else if(!checkPassword()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else if(!checkConfirmPassword()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else if(!Delete()) {
+                    event.preventDefault()
+                    event.stopPropagation()
                 }
 
                 form.classList.add('was-validated')
             }, false)
         })
 })()
+
+function checkPassword () {
+    var password = document.getElementById("password").value;
+    if (password.search(/^(?=.*[-\#\$\.\%\&\@\!\+\=\<\>\*])(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,12}$/) ){
+        alert("Password must contain at least 8 characters, one number, one uppercase, one lowercase, and one special character.");
+        return false;
+    }
+    return true;
+}
+
+function checkConfirmPassword () {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password != confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+    }
+
+    return true;
+    
+}
+
+function Delete () {
+    var deleteConfirm = confirm("Are you sure you want to delete this?");
+    if (deleteConfirm) {
+        return true;
+    } else {
+        return false;
+    }
+}

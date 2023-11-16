@@ -1,9 +1,433 @@
-#cluster-map {
-    width: 100%;
-    height: 500px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Raleway:wght@600&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    --brown: #a52a2a;
+    --orange: #ff7800;
+    --black: #130f40;
+    --light-color: #e0e0e0;
+    --box-shadow: 0 0.5rem 1rem rgba(31, 22, 22, 0.1);
+    --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+    --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --outline-hover: 0.1rem solid var (--black);
+    --gray: #cdcdcd;
 }
 
-#map {
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    /* text-transform: capitalize; */
+    transition: all 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body {
+    background-color: white;
+
+
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 8%;
+    background: white;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.header .logo i {
+    color: var(--brown);
+
+}
+
+.header .logo b {
+    color: var(--orange)
+}
+
+.header .navbar a {
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color: var(--black);
+    margin-left: 30px;
+    text-decoration: none;
+}
+
+.header .navbar a:hover {
+    color: var(--orange);
+}
+
+.header .sidebar a {
+    display: inline;
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color: var(--black);
+    margin-left: 30px;
+}
+
+.header .sidebar a:hover {
+    color: var(--orange);
+}
+
+/* 
+.header .sidebar div {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 0.5rem;
+    background: #fff;
+    color: var(--black);
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+    text-underline-position: none;
+
+} */
+
+
+#count{
+    font-size: medium;
+    color: var(--orange);
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#search-btn{
+    font-size: medium;
+    color: var(--orange);
+    font-weight: bold;
+    margin-right: 10px;
+
+}
+
+.active {
+    /* background: var(--orange); */
+    color: #ff7800 !important;
+}
+
+.heading {
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    font-size: 3rem;
+    color: var(--brown);
+
+}
+
+.heading span {
+    color: var(--orange);
+}
+
+.form-popup {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--gray);
+    width: 400px;
+    height: 550px;
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+
+}
+.form-popup.active{
+    display: hidden;
+}
+
+.form-container {
+    height: 45px;
     width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-container h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: #ff7800;
+    margin-bottom: 15px;
+}
+
+.form-container label {
+    font-size: 1.5rem;
+    text-align: start;
+
+    margin-bottom: 5px;
+}
+
+.form-container input {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+}
+
+.form-container input:focus {
+    border: 1px solid var(--orange);
+}
+
+.form-container .btn {
+    margin-top: 10px;
+    height: 45px;
+    width: 100%;
+
+}
+
+.form-container .btn {
+    height: 45px;
+    width: 100%;
+    background-color: var(--brown);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container .btn:hover {
+    background-color: var(--orange);
+    color: white;
+}
+.form-container p{
+    font-size: 1.3rem;
+    text-align: start;
+    margin-top: 10px;
+}
+.form-container p a{
+    color: var(--orange);
+    text-decoration: none;
+}
+.form-container p a:hover{
+    color: var(--brown);
+}
+.form-container .sign-up{
+    margin-left: 5px;
+}
+
+.container {
+    display: block;
+    justify-content: center;
+    padding: 10rem ;
+    font-size: 1.2rem;
+
+}
+
+.rest {
+    display: flex;
+    justify-content: space-around;
+    margin: 5%;
+   
+    
+}
+
+.rest img {
     height: 300px;
 }
+
+.image {
+    text-align: center;
+    padding: 15px;
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    margin: 0 5% 0% 5%;
+}
+
+.image p {
+    padding-top: 30px;
+    font-size: 2.5rem;
+    color: #a52a2a;
+
+}
+
+.shop_title {
+    font-size: 2.5rem;
+    color: #a52a2a;
+    text-decoration: none;
+
+}
+
+.shop_title:hover {
+    color: #ff7800;
+
+}
+
+
+.add-foods {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    margin-top: 50px;
+    padding: 40px 40px;
+
+}
+
+.add-foods .form-container h1 {
+    display: flex;
+    justify-content: center;
+    color: var(--black);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.add-foods .form-container {
+    display: inline-block;
+    height: 500px;
+    width: 600px;
+    margin-bottom: 10px;
+}
+
+.add-foods .form-container label {
+    font-size: 1.5rem;
+    text-align: start;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.add-foods .form-container input {
+    padding: 0% 5%;
+    height: 45px;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid var(--orange);
+}
+
+.add-foods .form-container .btn {
+    margin-top: 20px;
+    height: 45px;
+
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    html {
+      font-size: 50%; /* Adjust the base font size for smaller screens */
+    }
+  
+    .header {
+      padding: 1rem 5%; /* Adjust header padding for smaller screens */
+    }
+  
+    .header .navbar a, .header .sidebar a {
+      font-size: 1.4rem; /* Decrease font size for navigation links */
+      margin-left: 15px; /* Increase margin for better spacing */
+    }
+  
+    .heading {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      font-size: 2.5rem; /* Decrease font size for heading */
+    }
+  
+    .form-popup {
+      width: 90%; /* Make the form wider to fit better on small screens */
+      padding: 20px; /* Adjust padding */
+    }
+  
+    .form-container input, .form-container .btn {
+      font-size: 1.2rem; /* Decrease font size for form inputs and buttons */
+    }
+  
+    .rest {
+      flex-direction: column; /* Stack images vertically */
+      align-items: center; /* Center items */
+      margin: 2% 0; /* Adjust margin */
+    }
+  
+    .rest img {
+      width: 100%; /* Make images full width */
+      height: auto; /* Keep aspect ratio */
+    }
+  
+    .image p {
+      font-size: 2rem; /* Decrease font size */
+      padding-top: 20px; /* Adjust padding */
+    }
+  
+    .add-foods {
+      flex-direction: column; /* Stack elements vertically */
+      padding: 20px; /* Adjust padding */
+    }
+  
+    .add-foods .form-container {
+      height: auto; /* Auto height */
+      width: 100%; /* Full width */
+    }
+  
+    .add-foods .form-container h1 {
+      font-size: 2rem; /* Decrease font size */
+      margin-bottom: 10px; /* Adjust margin */
+    }
+  }
+
+
+
+
+
+
+
+  @media (max-width: 768px) {
+    .header .logo {
+      font-size: 2.5rem; /* Decrease font size for the logo */
+    }
+  
+    .header .logo i {
+      display: inline; /* Display the icon */
+      font-size: 2.5rem; /* Set the size of the icon */
+    }
+  
+    .header .logo b {
+      display: none; /* Hide the text part of the logo */
+    }
+  
+    .header .navbar a {
+      display: none; /* Hide the navigation links */
+    }
+  
+    .header .sidebar a {
+      display: none; /* Hide the sidebar links */
+    }
+  
+    #count,
+    #search-btn {
+      font-size: 2.5rem; /* Adjust font size for the icons or any other mobile-specific elements */
+    }
+  }
+
+
+
+
+
+

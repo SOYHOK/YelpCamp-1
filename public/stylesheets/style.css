@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Raleway:wght@600&family=Roboto:wght@400;500&display=swap');
+ 
+         :root{
+            --brown: #a52a2a;
+            --orange: #ff7800;
+            --black: #130f40;
+            --light-color: #e0e0e0;
+            --box-shadow: 0 0.5rem 1rem rgba(31, 22, 22, 0.1);
+            --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+            --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
+            --outline-hover: 0.1rem solid var (--black);
+            --gray: #cdcdcd;
+         }
+         *{
+             font-family: 'Poppins', sans-serif;
+             margin: 0; padding: 0;
+             box-sizing: border-box;
+             outline: none; border: none;
+             text-decoration: none;
+             /* text-transform: capitalize; */
+             transition: all 0.2s linear;
+         }
+         html{
+             font-size: 62.5%;
+             overflow-x: hidden;
+             scroll-behavior: smooth;
+             scroll-padding-top: 7rem;
+         }
+         body{
+            background-color: var(--light-color);
+             
+ 
+         }
+        .news{
+            text-align: center;
+            margin-top: 100px;
+            
+        }
+        .news a{
+            text-decoration: none !important;
+            font-size: large;
+            color: var(--orange);
+            border: 1px solid var(--orange);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s linear;
+            box-shadow: var(--box-shadow);
+            
+        }
+        .news a:hover{
+            background-color: var(--orange);
+            color: #fff;
+        }
+         h1{
+            display: block;
+            text-align: center;
+            font-size: 3rem;
+            color: var(--brown);
+            padding: 1rem 0;
+
+        }
+
+        h2{
+            display: block;
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--orange);
+            padding: 1rem 0;
+            
+        }
+        /* Add New */
+
+        .row{
+            width: 100%; 
+            display: flex; 
+            justify-content: center;
+        }
+
+        .view{
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.5rem;
+            box-shadow: var(--box-shadow);
+            border-radius: 15px; 
+            align-items: center;
+            padding: 3rem 2rem;
+        
+        }
+        .view .img-fluid{
+            height: 150px;
+            width: 270px;
+            border-radius: 15px 50px;
+
+        }
+        
+       .view #addtochart{
+        border: 1px solid var(--orange); 
+        padding: 5px 85px; 
+        border-radius: 5px 35px;
+        background-color: var(--orange);
+       }
+
+
+    .ordermenu{
+        position: fixed;
+        font-size: 1.5rem;
+        box-shadow: var(--box-shadow);
+        padding: 3rem 2rem;
+        width: 300px;
+        top: 0;
+        right: 0;
+        min-height: 100%;
+        background-color: var(--light-color);
+        z-index: 3;
+        margin-top: 8rem;
+
+    }
+
+
+
+    @media screen {
+        html{
+            font-size: 62.5%;
+        }
+
+        .ordermenu{
+            position: fixed;
+            font-size: 1.5rem;
+            box-shadow: var(--box-shadow);
+            padding: 3rem 2rem;
+            width: 300px;
+            top: 0;
+            right: 0;
+            min-height: 100%;
+            background-color: var(--light-color);
+            z-index: 3;
+            margin-top: 8rem;
+        }
+
+        .ordermenu .close{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: var(--orange);
+            cursor: pointer;
+        }
+
+        .ordermenu .close:hover{
+            color: var(--brown);
+        }
+
+        .ordermenu .ordermenu-title{
+            text-align: center;
+            font-size: 2rem;
+            color: var(--brown);
+            padding: 1rem 0;
+        }
+
+        .ordermenu .ordermenu-title span{
+            color: var(--orange);
+        }
+
+        .ordermenu .ordermenu-content{
+            margin-top: 2rem;
+        }
+
+        .ordermenu .ordermenu-content .ordermenu-item{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+    }
