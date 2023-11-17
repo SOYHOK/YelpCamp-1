@@ -44,7 +44,8 @@
   .active {
     color: #ff7800 !important;
   }
-  
+
+
   /* Home section */
   
   .home {
@@ -58,8 +59,9 @@
   
   .home-left-side h1 {
     font-size: 4rem;
-    margin-left: 40px;
+    margin-left: 60px;
     color: white;
+    width: 60%;
   }
   
   .home-left-side p {
@@ -103,22 +105,29 @@
     .home {
       flex-direction: column; /* Display flex items vertically on small screens */
       text-align: center; /* Center align text */
+      border-radius: 10px 45px;
     }
   
     .home-left-side h1 {
-      font-size: 3rem; /* Decrease font size for heading */
-      margin: 20px; /* Update margin for better spacing */
+      font-size: 2rem; /* Decrease font size for heading */
+      margin-top: 20px;
+      margin-left: 70px; /* Update margin for better spacing */
+      text-align: center;
+      width: 60%;
     }
   
     .home-left-side p {
-      font-size: 1.3rem; /* Decrease font size for paragraph */
+      font-size: 1.2rem; /* Decrease font size for paragraph */
       width: 80%; /* Adjust width for better readability */
-      margin: 10px;
+      margin-left: 35px;
     }
   
     .home-right-side img {
-      width: 80%; /* Make the image responsive */
-      margin: 40px 0; /* Adjust margin */
+      width: 60%; /* Make the image responsive */
+      margin-left: 50px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  
     }
   
     .home a {

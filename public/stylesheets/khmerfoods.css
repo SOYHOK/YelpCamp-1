@@ -233,32 +233,16 @@ h2{
     font-size: 2rem;
     color: var(--orange);
     padding: 1rem 0;
-    text-decoration: none;
+    text-decoration: none !important;
     
 }
 
-.view{
-    display: flex;
-    justify-content: space-around;
-    font-size: 1.5rem;
-    box-shadow: var(--box-shadow);
-    border-radius: 15px; 
-    align-items: center;
-    padding: 3rem 2rem;
-
+#title h2{
+    text-decoration: none !important;
+    font-size: 2rem;
 }
-.view .img-fluid{
-    height: 150px;
-    width: 270px;
-    border-radius: 15px 50px;
-
-}
-
-.view #addtochart{
-border: 1px solid var(--orange); 
-padding: 5px 85px; 
-border-radius: 5px 35px;
-background-color: var(--orange);
+#title h2:hover{
+    color: var(--brown);
 }
 
 #edit{
@@ -271,6 +255,11 @@ background-color: var(--orange);
     background: var(--orange);
     color: white;
     margin-left: 27px;
+}
+
+.single_food{
+    width: 300px;
+    height: 550px;
 }
 
 #edit:hover{
@@ -299,12 +288,18 @@ background-color: var(--orange);
 }
 /* Add New */
 
-.row{
+/* .row{
     width: 100%; 
     display: flex; 
     justify-content: center;
-}
+} */
 
+/* .wrap_food{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+} */
 .view{
     display: flex;
     font-size: 1.5rem;
@@ -323,7 +318,7 @@ background-color: var(--orange);
 }
 
 .view #addtochart{
-padding: 5px 75px; 
+padding: 5px 74px; 
 border-radius: 5px 35px;
 background-color: var(--orange);
 color: white;
@@ -331,7 +326,8 @@ color: white;
 .view #addtochart:hover{
     background-color: rgb(245, 168, 15);
     color: white;
-    border: 1px solid var(--orange);
+    padding: 5px 74px; 
+    border-radius: 5px 35px;
 }
 
 
@@ -440,7 +436,7 @@ h2{
     font-size: 1.5rem;
     color: var(--orange);
     padding: 1rem 0;
-    text-decoration: none;
+    text-decoration: none !important;
     
 }
 .addnew{
@@ -450,15 +446,28 @@ h2{
     width: 100%;
     
     /* background: var(--light-color); */
+
     
 }
-.carousel-inner{
-    object-fit: cover;
-    border-radius: 15px;
-    /* box-shadow: var(--box-shadow); */
+
+.single_food{
+    width: 300px;
+    height: 400px;
+    margin-left: 35px;
 }
 
+.single_food h2{
+    font-size: 1.5rem;
+    color: var(--brown);
+    margin-top: 10px;
 
+}
+.carousel-inner{
+    height: 200px;
+    object-fit: contain;
+    border-radius: 15px 50px;
+
+}
 
 
 
@@ -572,10 +581,6 @@ h2{
         
     }
 
-    .addnew .img-fluid{
-        height: 320px;
-        width: 660px;
-    }
 
     
 }

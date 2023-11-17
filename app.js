@@ -17,6 +17,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const userRoutes = require('./routes/users');
 const khmerfoodRoutes = require('./routes/khmerfoods');
 const reviewRoutes = require('./routes/reviews');
+const videoRoutes = require('./routes/videos');
 
 mongoose.connect('mongodb://127.0.0.1:27017/khmerfoods', {
     useNewUrlParser: true,
@@ -81,6 +82,7 @@ app.use((req, res, next) => {
 app.use('/', userRoutes);
 app.use('/khmerfoods', khmerfoodRoutes)
 app.use('/khmerfoods/:id/reviews', reviewRoutes)
+app.use('/videos', videoRoutes)
 
 
 app.get('/', (req, res) => {

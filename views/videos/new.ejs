@@ -1,0 +1,39 @@
+<% layout('layouts/boilerplate')%>
+
+<form action="/videos" method="POST" class="addnew" enctype="multipart/form-data">
+    <h1>Add Your Video</h1>
+
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" title="title" id="title" name="video[title]" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea type="text" id="description" name="video[description]" class="form-control" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="videoUrl" class="form-label">Video Url</label>
+        <input type="text" videoUrl="videoUrl" id="videoUrl" name="video[videoUrl]" class="form-control" required>
+    </div>
+
+    <input type="file" name="images" id="images" class="form-control" required multiple>
+
+    <!-- <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input type="file" image="image" id="image" name="video[image]" class="form-control" required multiple>
+
+    </div> -->
+
+    <div>
+        <button type="submit" class="btn">Submit</button>
+    </div>
+
+    <div class="mb-5 mt-4">
+        <a href="/videos" class="back">Back</a>
+    </div>
+
+</form>
+
+

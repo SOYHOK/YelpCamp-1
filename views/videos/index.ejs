@@ -1,23 +1,23 @@
 <% layout('layouts/boilerplate')%>
 <div class="news ">
     <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
-    <a href="/khmerfoods/new">Add Food</a>
+    <a href="/videos/new">Add Video</a>
     <% } %>
 </div>
-<h1>Welcome to khmerfood Restaurant!</h1>
-<h2>Enjoy with our khmerfood's foods!</h2>
+<h1>Welcome to our cook teaching!</h1>
+<h2>Enjoy to learn how to cook khmer food!</h2>
 
-<div class="row mt-4 wrap_food">
-    <% for (let khmerfood of khmerfoods) { %>
-        <div class="col-sm-8 col-md-6 col-lg-4 col-xl-3 single_food">
+<div class="row mt-4">
+    <% for (let video of videos) { %>
+        <div class="col-3">
             <div class="view">
                 <div class="col">
                     <div class="col">
                         <div class="mb-3">
                             <div class="carousel-inner">
-                                <% for(let img of khmerfood.images) { %>
+                                <% for(let vdo of video.images) { %>
                                 <div class="carousel-item active">
-                                    <img src="<%= img.url%>" alt="<%= %>" class="img-fluid">
+                                    <img src="<%= vdo.url%>" alt="<%= %>" class="img-fluid">
                                 </div>
                                 <% } %>
                             </div>
@@ -26,17 +26,17 @@
                     </div>
 
                     <div class="col text-center" id="title">
-                        <a href="/khmerfoods/<%= khmerfood._id %>">
-                            <h2><%= khmerfood.title %></h2>
+                        <a href="/videos/<%= video._id %>">
+                            <h2><%= video.title %></h2>
                         </a>
                     </div>
                     <div class="col">
                         <p>
-                            <%= khmerfood.description %>
+                            <%= video.description %>
                         </p>
                     </div>
                     <div class="col">
-                        <p>$<%= khmerfood.price %>
+                        <p>$<%= video.videoUrl %>
                         </p>
                     </div>
                     <div class="mb-3">
@@ -44,11 +44,11 @@
                    </div>
                     <div style="display: inline; text-align: start; justify-content: space-between;">
                         <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
-                        <a href="/khmerfoods/<%= khmerfood._id %>/edit" class="d-inline text-start justify-content-between" id="edit">Edit</a>
+                        <a href="/videos/<%= video._id %>/edit" class="d-inline text-start justify-content-between" id="edit">Edit</a>
                         <% } %>
                     </div>
                     <div style="display: inline; text-align: end; justify-content: space-between;">
-                        <form action="/khmerfoods/<%= khmerfood._id %>?_method=DELETE" method="POST" class="d-inline justify-content-between">
+                        <form action="/videos/<%= video._id %>?_method=DELETE" method="POST" class="d-inline justify-content-between">
                             <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
                             <button class="d-inline justify-content-between" onclick="Delete()" id="delete">Delete</button>
                             <% } %>
@@ -65,6 +65,6 @@
 
     
 <script>
-    const khmerfoods = { features: <%- JSON.stringify(khmerfoods) %>} // convert to json
+    const videos = { features: <%- JSON.stringify(videos) %>} // convert to json
 </script>
 

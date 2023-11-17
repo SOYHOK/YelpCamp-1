@@ -50,12 +50,16 @@ function checkConfirmPassword () {
     return true;
     
 }
+// Delete
 
 function Delete () {
-    var deleteConfirm = confirm("Are you sure you want to delete this?");
-    if (deleteConfirm) {
-        return true;
-    } else {
+    var deleteMessage = document.getElementById("delete").value;
+    if (deleteMessage != 'delete') {
+        alert("Please type delete to delete your account.");
         return false;
     }
+    return true;
+    
+
+    
 }

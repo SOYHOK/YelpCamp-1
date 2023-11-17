@@ -240,7 +240,7 @@ body {
 .container {
     display: block;
     justify-content: center;
-    padding: 5rem ;
+    padding: 3rem ;
     font-size: 1.2rem;
 
 }
@@ -380,7 +380,7 @@ body {
     .form-popup {
       width: 70%; /* Make the form wider to fit better on small screens */
       height: 60%; /* Make form taller to fit better on small screens */
-      margin-top: 0px;
+      top: 48%; /* Adjust position */
     }
   
     .form-container input, .form-container .btn {
