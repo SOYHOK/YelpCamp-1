@@ -1,21 +1,21 @@
 <% layout('layouts/boilerplate')%>
 <div class="news ">
-    <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
-    <a href="/videos/new">Add Food</a>
+    <% if (currentUser && currentUser._id.toString() === '655b2158c89efc6590c4012d') { %>
+    <a href="/tbalkhmers/new">Add Food</a>
     <% } %>
 </div>
-<h1>Welcome to our food cooking video!</video>!</h1>
-<h2>Enjoy to learn to cook Khmer's food!</h2>
+<h1>Welcome to tbalkhmer Restaurant!</h1>
+<h2>Enjoy with our tbalkhmer's foods!</h2>
 
 <div class="row mt-4 wrap_food">
-    <% for (let video of videos) { %>
+    <% for (let tbalkhmer of tbalkhmers) { %>
         <div class="col-sm-8 col-md-6 col-lg-4 col-xl-3 single_food">
             <div class="view">
                 <div class="col">
                     <div class="col">
                         <div class="mb-3">
                             <div class="carousel-inner">
-                                <% for(let img of video.images) { %>
+                                <% for(let img of tbalkhmer.images) { %>
                                 <div class="carousel-item active">
                                     <img src="<%= img.url%>" alt="<%= %>" class="img-fluid">
                                 </div>
@@ -26,30 +26,30 @@
                     </div>
 
                     <div class="col text-center" id="title">
-                        <a href="/videos/<%= video._id %>">
-                            <h2><%= video.title %></h2>
+                        <a href="/tbalkhmers/<%= tbalkhmer._id %>">
+                            <h2><%= tbalkhmer.title %></h2>
                         </a>
                     </div>
                     <div class="col">
                         <p>
-                            <%= video.description %>
+                            <%= tbalkhmer.description %>
                         </p>
                     </div>
                     <div class="col">
-                        <p>$<%= video.price %>
+                        <p>$<%= tbalkhmer.price %>
                         </p>
                     </div>
                     <div class="mb-3">
                         <button onclick="Addtochart()" id="addtochart">Add to Chart</button>
                    </div>
                     <div style="display: inline; text-align: start; justify-content: space-between;">
-                        <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
-                        <a href="/videos/<%= video._id %>/edit" class="d-inline text-start justify-content-between" id="edit">Edit</a>
+                        <% if (currentUser && currentUser._id.toString() === '655b2158c89efc6590c4012d') { %>
+                        <a href="/tbalkhmers/<%= tbalkhmer._id %>/edit" class="d-inline text-start justify-content-between" id="edit">Edit</a>
                         <% } %>
                     </div>
                     <div style="display: inline; text-align: end; justify-content: space-between;">
-                        <form action="/videos/<%= video._id %>?_method=DELETE" method="POST" class="d-inline justify-content-between">
-                            <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
+                        <form action="/tbalkhmers/<%= tbalkhmer._id %>?_method=DELETE" method="POST" class="d-inline justify-content-between">
+                            <% if (currentUser && currentUser._id.toString() === '655b2158c89efc6590c4012d') { %>
                             <button class="d-inline justify-content-between" onclick="Delete()" id="delete">Delete</button>
                             <% } %>
                         </form>
@@ -65,6 +65,6 @@
 
     
 <script>
-    const videos = { features: <%- JSON.stringify(videos) %>} // convert to json
+    const tbalkhmers = { features: <%- JSON.stringify(tbalkhmers) %>} // convert to json
 </script>
 

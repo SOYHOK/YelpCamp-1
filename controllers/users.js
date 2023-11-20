@@ -1,4 +1,6 @@
+const e = require('connect-flash');
 const User = require('../models/user');
+
 
 module.exports.renderRegister = (req, res) => {
     res.render('users/register');
@@ -25,10 +27,15 @@ module.exports.renderLogin = (req, res) => {
 }
 
 module.exports.login = (req, res) => {
-    req.flash('success', 'welcome back!');
-    const redirectUrl = req.session.returnTo || '/home';
-    delete req.session.returnTo;
-    res.redirect(redirectUrl);
+    req.flash('success', 'Welcome back!');
+    const user = req.user;
+    if (user.id === '655b2158c89efc6590c4012d') {
+        res.redirect('/tbalkhmers');
+    }else if (user.id === '652463cce658bebe7040a883') {
+        res.redirect('/khmerfoods');
+    } else{
+        res.redirect('/home');
+    }
 }
 
 module.exports.logout = (req, res) => {

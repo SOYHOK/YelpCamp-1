@@ -114,6 +114,10 @@ body {
     display: none;
 }
 
+.sidebar svg{
+    display: block;
+}
+
 #count{
     font-size: medium;
     color: var(--orange);
@@ -379,7 +383,7 @@ body {
   
     .form-popup {
       width: 70%; /* Make the form wider to fit better on small screens */
-      height: 60%; /* Make form taller to fit better on small screens */
+      height: 70%; /* Make form taller to fit better on small screens */
       top: 48%; /* Adjust position */
     }
   

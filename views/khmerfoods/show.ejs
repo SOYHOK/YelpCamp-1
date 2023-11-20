@@ -1,8 +1,8 @@
 <% layout('layouts/boilerplate')%>
-<div class="addnew" style="width: 80%;">
+<div class="addnew">
     <h1>Details</h1>
 
-    <div class="mb-3 text-center">
+    <div class="mb-2 text-center">
         <div class="carousel-inner">
             <% for(let img of khmerfood.images) { %>
             <div class="carousel-item active">
@@ -11,33 +11,33 @@
             <% } %>
         </div>
     </div> 
-    <div class="mb-3">
+    <div class="mb-2">
         <h2><%= khmerfood.title %></h2> 
     </div>
 
-    <div class="mb-3 ml-3">
+    <div class="mb-2 ml-5">
         <p><%= khmerfood.description %></p>
     </div>
 
-    <div class="mb-3 ml-3">
+    <div class="mb-2 ml-5">
         <p>$ <%= khmerfood.price %></p>
     </div>
    
-    <div class="col ml-3">
+    <div style="display: inline; text-align: start; justify-content: space-between;">
         <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
-            <a href="/khmerfoods/<%= khmerfood._id %>/edit">Edit</a>
+        <a href="/khmerfoods/<%= khmerfood._id %>/edit" class="d-inline text-start justify-content-between" id="edit">Edit</a>
         <% } %>
     </div>
-    <div class="col">
-        <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
-            <form action="/khmerfoods/<%= khmerfood._id %>?_method=DELETE" method="POST">
-                <button class="btn" onclick="Delete()" id="delete">Delete</button>
-            </form>
-        <% } %>
+    <div style="display: inline; text-align: end; justify-content: space-between;">
+        <form action="/khmerfoods/<%= khmerfood._id %>?_method=DELETE" method="POST" class="d-inline justify-content-between">
+            <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
+            <button class="d-inline justify-content-between" onclick="Delete()" id="delete">Delete</button>
+            <% } %>
+        </form>
     </div>
 
 
-    <div class="mb-5 mt-4 ml-3">
+    <div class="mb-5 mt-4 ml-5">
         <a href="/khmerfoods" class="back">Back</a>
     </div>
 

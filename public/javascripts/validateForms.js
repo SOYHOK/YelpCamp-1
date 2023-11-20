@@ -19,9 +19,6 @@
                 } else if(!checkConfirmPassword()) {
                     event.preventDefault()
                     event.stopPropagation()
-                } else if(!Delete()) {
-                    event.preventDefault()
-                    event.stopPropagation()
                 }
 
                 form.classList.add('was-validated')
@@ -52,14 +49,6 @@ function checkConfirmPassword () {
 }
 // Delete
 
-function Delete () {
-    var deleteMessage = document.getElementById("delete").value;
-    if (deleteMessage != 'delete') {
-        alert("Please type delete to delete your account.");
-        return false;
-    }
-    return true;
     
 
     
-}

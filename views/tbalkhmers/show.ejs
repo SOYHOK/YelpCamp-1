@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate')%>
+<div class="addnew">
+    <h1>Details</h1>
+
+    <div class="mb-3 text-center">
+        <div class="carousel-inner">
+            <% for(let img of tbalkhmer.images) { %>
+            <div class="carousel-item active">
+                <img src="<%= img.url%>" alt="<%= %>" class="img-fluid" >
+            </div>
+            <% } %>
+        </div>
+    </div> 
+    <div class="mb-3">
+        <h2><%= tbalkhmer.title %></h2>
+    </div>
+
+    <div class="mb-3 ml-3">
+        <p><%= tbalkhmer.description %></p>
+    </div>
+
+    <div class="mb-3 ml-3">
+        <p>$ <%= tbalkhmer.price %></p>
+    </div>
+   
+    <div style="display: inline; text-align: start; justify-content: space-between;">
+        <% if (currentUser && currentUser._id.toString() === '655b2158c89efc6590c4012d') { %>
+        <a href="/tbalkhmers/<%= tbalkhmer._id %>/edit" class="d-inline text-start justify-content-between" id="edit">Edit</a>
+        <% } %>
+    </div>
+    <div style="display: inline; text-align: end; justify-content: space-between;">
+        <form action="/tbalkhmers/<%= tbalkhmer._id %>?_method=DELETE" method="POST" class="d-inline justify-content-between">
+            <% if (currentUser && currentUser._id.toString() === '655b2158c89efc6590c4012d') { %>
+            <button class="d-inline justify-content-between" onclick="Delete()" id="delete">Delete</button>
+            <% } %>
+        </form>
+    </div>
+
+
+    <div class="mb-5 mt-4 ml-3">
+        <a href="/tbalkhmers" class="back">Back</a>
+    </div>
+
+</div>

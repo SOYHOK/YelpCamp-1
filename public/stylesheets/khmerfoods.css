@@ -78,7 +78,7 @@ body {
     box-shadow: var(--box-shadow);
     padding: 0.5rem 2.7rem;
     border-radius: 0.5rem;
-    width: 70%;
+    width: 60%;
     
 }
 
@@ -103,7 +103,7 @@ body {
     border-radius: 5px;
     border: 1px solid var(--gray);
     margin-top: 5px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     padding-left: 10px;
     font-size: 1.5rem;
     color: var(--black);
@@ -259,7 +259,7 @@ h2{
 
 .single_food{
     width: 300px;
-    height: 550px;
+    height: 300px;
 }
 
 #edit:hover{
@@ -453,7 +453,7 @@ h2{
 .single_food{
     width: 300px;
     height: 400px;
-    margin-left: 35px;
+
 }
 
 .single_food h2{
@@ -515,7 +515,6 @@ h2{
         border-radius: 5px;
         border: 1px solid var(--gray);
         margin-top: 5px;
-        margin-bottom: 20px;
         padding-left: 10px;
         font-size: 1rem;
         color: var(--black);

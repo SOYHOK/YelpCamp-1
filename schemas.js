@@ -33,6 +33,26 @@ module.exports.khmerfoodSchema = Joi.object({
     deleteImages: Joi.array()
 });
 
+module.exports.videoSchema = Joi.object({
+    video: Joi.object({
+        title: Joi.string().required().escapeHTML(),
+        description: Joi.string().required().escapeHTML(),
+        videoUrl: Joi.string().required().escapeHTML()
+    }).required()
+});
+
+module.exports.tbalkhmerSchema = Joi.object({
+    tbalkhmer: Joi.object({
+        title: Joi.string().required().escapeHTML(),
+        description: Joi.string().required().escapeHTML(),
+        price: Joi.number().required().min(0),
+        
+    }).required()
+});
+
+
+
+
 module.exports.reviewSchema = Joi.object({
     review: Joi.object({
         rating: Joi.number().required().min(1).max(5),

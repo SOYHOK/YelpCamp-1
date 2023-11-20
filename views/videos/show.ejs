@@ -1,0 +1,21 @@
+<% layout('layouts/boilerplate')%>
+
+<h1>Our Video</h1>
+
+<% videos.forEach(function(video) { %>
+
+    <div>
+        <video width="320" height="240" controls>
+            <source src="<%= video.videoUrl %>" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <a href="/videos/<%= video._id %>">
+            <h2><%= video.title %></h2>
+        </a>
+
+        <p>
+            <%= video.description %>
+        </p>
+
+    </div>

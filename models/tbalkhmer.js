@@ -16,7 +16,7 @@ ImageSchema.virtual('thumbnail').get(function () {
 
 // const opts = { toJSON: { virtuals: true } }; // this is for virtuals to work with res.json
 
-const khmerfoodSchema = new Schema({
+const TbalkhmerSchema = new Schema({
     title: String,
     images: {
         type: [ImageSchema],
@@ -27,7 +27,7 @@ const khmerfoodSchema = new Schema({
     author: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        id: '652463cce658bebe7040a883'
+        id: '655b2158c89efc6590c4012d'
        
     },
     reviews: [
@@ -40,15 +40,15 @@ const khmerfoodSchema = new Schema({
 }, );
 
 
-// khmerfoodSchema.virtual('properties.popUpMarkup').get(function () {
+// tbalkhmerSchema.virtual('properties.popUpMarkup').get(function () {
 //     return `
-//     <strong><a href="/khmerfoods/${this._id}">${this.title}</a><strong>
+//     <strong><a href="/tbalkhmers/${this._id}">${this.title}</a><strong>
 //     <p>${this.description.substring(0, 20)}...</p>`
 // });
 
 
 
-khmerfoodSchema.post('findOneAndDelete', async function (doc) {
+TbalkhmerSchema.post('findOneAndDelete', async function (doc) {
     if (doc) {
         await Review.deleteMany({
             _id: {
@@ -58,4 +58,4 @@ khmerfoodSchema.post('findOneAndDelete', async function (doc) {
     }
 })
 
-module.exports = mongoose.model('Khmerfood', khmerfoodSchema);
+module.exports = mongoose.model('Tbalkhmer', TbalkhmerSchema);
