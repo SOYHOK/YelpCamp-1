@@ -1,24 +1,24 @@
 <% layout('layouts/boilerplate')%>
 <!-- <div class="row">
-    <h1 class="text-center">Edit khmerfood</h1>
+    <h1 class="text-center">Edit meatuphum</h1>
     <div class="col-md-6 offset-md-3">
-        <form action="/khmerfoods/<%=khmerfood._id%>?_method=PUT" method="POST" novalidate class="validated-form"
+        <form action="/meatuphums/<%=meatuphum._id%>?_method=PUT" method="POST" novalidate class="validated-form"
             enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label" for="title">Title</label>
-                <input class="form-control" type="text" id="title" name="khmerfood[title]"
-                    value="<%=khmerfood.title %>" required>
+                <input class="form-control" type="text" id="title" name="meatuphum[title]"
+                    value="<%=meatuphum.title %>" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
 
             <div class="mb-3">
-                <label class="form-label" for="price">khmerfood Price</label>
+                <label class="form-label" for="price">meatuphum Price</label>
                 <div class="input-group">
                     <span class="input-group-text" id="price-label">$</span>
                     <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
-                        aria-describedby="price-label" name="khmerfood[price]" value="<%=khmerfood.price %>"
+                        aria-describedby="price-label" name="meatuphum[price]" value="<%=meatuphum.price %>"
                         required><div class="valid-feedback">
                         Looks good!
                     </div>
@@ -27,8 +27,8 @@
 
             <div class="mb-3">
                 <label class="form-label" for="description">Description</label>
-                <textarea class="form-control" type="text" id="description" name="khmerfood[description]"
-                    required><%= khmerfood.description%></textarea>
+                <textarea class="form-control" type="text" id="description" name="meatuphum[description]"
+                    required><%= meatuphum.description%></textarea>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="mb-3">
-                <% khmerfood.images.forEach(function(img, i) {  %>
+                <% meatuphum.images.forEach(function(img, i) {  %>
 
                 <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="">
                 <div class="form-check-inline">
@@ -53,32 +53,32 @@
                 <% })%>
             </div>
             <div class="mb-3">
-                <button class="btn btn-info">Update khmerfood</button>
+                <button class="btn btn-info">Update meatuphum</button>
             </div>
         </form>
-        <a href="/khmerfoods/<%= khmerfood._id%>">Back To khmerfood</a>
+        <a href="/meatuphums/<%= meatuphum._id%>">Back To meatuphum</a>
 
     </div>
 </div> -->
 
-<form action="/khmerfoods/<%= khmerfood._id %>?_method=PUT" method="POST" class="addnew" enctype="multipart/form-data">
+<form action="/meatuphums/<%= meatuphum._id %>?_method=PUT" method="POST" class="addnew" enctype="multipart/form-data">
     <h1>Edit</h1>
 
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
-        <input type="text" title="title" id="title" name="khmerfood[title]" class="form-control" value="<%= khmerfood.title %>" required>
+        <input type="text" title="title" id="title" name="meatuphum[title]" class="form-control" value="<%= meatuphum.title %>" required>
     </div>
 
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea type="text" id="description" name="khmerfood[description]" class="form-control"><%= khmerfood.description %></textarea>
+        <textarea type="text" id="description" name="meatuphum[description]" class="form-control"><%= meatuphum.description %></textarea>
     </div>
 
     <div class="mb-3">
         <label for="price" class="form-label">Price</label>
         <div class="input-price">
             <span class="input-price-text" id="price-label">$</span>
-            <input type="number" price="price" id="price" name="khmerfood[price]" class="form-control" placeholder="0.00" aria-label="price" aria-describedby="price-label" value="<%= khmerfood.price %>">
+            <input type="number" price="price" id="price" name="meatuphum[price]" class="form-control" placeholder="0.00" aria-label="price" aria-describedby="price-label" value="<%= meatuphum.price %>">
         </div>
     </div>
 
@@ -87,7 +87,7 @@
         <input type="file" name="images" id="images" class="form-control" required multiple>  
     </div>
     <div class="carousel-inner">
-        <% for(let img of khmerfood.images) { %>
+        <% for(let img of meatuphum.images) { %>
         <div class="carousel-item active">
             <img src="<%= img.url%>" alt="<%= %>" class="img-fluid w-50 h-50">
         </div>
@@ -99,7 +99,7 @@
     </div>
 
     <div class="mb-3">
-        <% khmerfood.images.forEach(function(img, i) {  %>
+        <% meatuphum.images.forEach(function(img, i) {  %>
 
         <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="">
         <div class="form-check-inline">
@@ -113,7 +113,7 @@
     </div>
 
     <div class="mb-5 mt-4">
-        <a href="/khmerfoods" class="back">Back</a>
+        <a href="/meatuphums" class="back">Back</a>
     </div>
 
 </form>

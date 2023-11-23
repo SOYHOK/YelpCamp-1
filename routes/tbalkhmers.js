@@ -20,7 +20,7 @@ router.get('/new', isLoggedIn,  tbalkhmers.renderNewForm)
 
 router.route('/:id')
     .get(isLoggedIn, catchAsync(tbalkhmers.showTbalkhmer))
-    .put(isLoggedIn, isTbalAuthor, upload.array('images'),validateTbalkhmer, catchAsync(tbalkhmers.updateTbalkhmer))
+    .put(isLoggedIn, isTbalAuthor, upload.array('images'), validateTbalkhmer, catchAsync(tbalkhmers.updateTbalkhmer))
     .delete(isLoggedIn, isTbalAuthor, catchAsync(tbalkhmers.deleteTbalkhmer));
 
 router.get('/:id/edit', isLoggedIn, isTbalAuthor, catchAsync(tbalkhmers.renderEditForm))

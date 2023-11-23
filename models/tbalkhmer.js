@@ -27,7 +27,7 @@ const TbalkhmerSchema = new Schema({
     author: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        id: '655b2158c89efc6590c4012d'
+        id: '652463cce658bebe7040a883'
        
     },
     reviews: [
@@ -40,9 +40,9 @@ const TbalkhmerSchema = new Schema({
 }, );
 
 
-// tbalkhmerSchema.virtual('properties.popUpMarkup').get(function () {
+// TbalkhmerSchema.virtual('properties.popUpMarkup').get(function () {
 //     return `
-//     <strong><a href="/tbalkhmers/${this._id}">${this.title}</a><strong>
+//     <strong><a href="/Tbalkhmers/${this._id}">${this.title}</a><strong>
 //     <p>${this.description.substring(0, 20)}...</p>`
 // });
 

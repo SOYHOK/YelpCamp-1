@@ -263,7 +263,7 @@ h2{
 }
 
 #edit:hover{
-    background-color: rgb(245, 168, 15);
+    background-color: #fd9132;
     color: white;
     border: 1px solid var(--orange);
 }
@@ -324,7 +324,7 @@ background-color: var(--orange);
 color: white;
 }
 .view #addtochart:hover{
-    background-color: rgb(245, 168, 15);
+    background-color: #fd9132;
     color: white;
     padding: 5px 74px; 
     border-radius: 5px 35px;
@@ -347,6 +347,10 @@ margin-top: 8rem;
 
 }
 
+#cart{
+    margin-top: 9px;
+    margin-left: 20px;
+}
 
 
 @media screen and (max-width: 768px) {
@@ -451,31 +455,60 @@ h2{
 }
 
 .single_food{
-    width: 300px;
-    height: 400px;
+    width: 370px;
+    height: 410px;
 
 }
 
 .single_food h2{
     font-size: 1.5rem;
     color: var(--brown);
-    margin-top: 10px;
+    text-decoration: none !important;
 
 }
-.carousel-inner{
+.single_food p{
+    font-size: 1.5rem;
+    color: var(--black);
+    text-align: center;
+
+}
+
+.view .img-fluid{
     height: 200px;
-    object-fit: contain;
+    width: 370px;
     border-radius: 15px 50px;
 
+
+
+
+}
+.view #addtochart{
+
+padding: 5px 108px;
+
+}
+.view #addtochart:hover{
+    background-color: #fd9132;
+    color: white;
+    padding: 5px 108px;
+    border-radius: 5px 35px;
 }
 
 
 
 
+.view #edit{
+    margin-left: 25px;
 }
 
+.view #delete{
+    display: inline;
+    justify-content: space-between;
+    margin-left: 70px;
 
+}
 
+}
 
 
 @media screen and (max-width: 768px) {
@@ -580,6 +613,9 @@ h2{
         
     }
 
-
+#cart{
+    margin-top: 5px;
+    margin-left: 27px;
+}
     
 }

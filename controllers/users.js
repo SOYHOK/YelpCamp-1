@@ -31,7 +31,9 @@ module.exports.login = (req, res) => {
     const user = req.user;
     if (user.id === '655b2158c89efc6590c4012d') {
         res.redirect('/tbalkhmers');
-    }else if (user.id === '652463cce658bebe7040a883') {
+    }else if(user.id === '655f2acdfa47605c348091d3'){
+        res.redirect('/meatuphums');
+    }else if(user.id === '652463cce658bebe7040a883') {
         res.redirect('/khmerfoods');
     } else{
         res.redirect('/home');

@@ -1,10 +1,11 @@
-const { khmerfoodSchema, tbalkhmerSchema, reviewSchema } = require('./schemas.js');
+const { khmerfoodSchema, tbalkhmerSchema, meatuphumSchema, reviewSchema } = require('./schemas.js');
 const ExpressError = require('./utils/ExpressError');
 const Khmerfood = require('./models/khmerfood');
 const Tbalkhmer = require('./models/tbalkhmer');
 const Review = require('./models/review');
 const e = require('connect-flash');
-const tbalkhmer = require('./models/tbalkhmer');
+const Meatuphum = require('./models/meatuphum');
+
 
 module.exports.isLoggedIn = (req, res, next) => {
     if (!req.isAuthenticated()) {
@@ -37,6 +38,19 @@ module.exports.validateTbalkhmer = (req, res, next) => {
 
 }
 
+module.exports.validateMeatuphum = (req, res, next) => {
+    const { error } = meatuphumSchema.validate(req.body);
+    if (error) {
+        const msg = error.details.map(el => el.message).join(',')
+        throw new ExpressError(msg, 400)
+    } else {
+        next();
+    }
+
+}
+
+
+
 
 
 
@@ -59,6 +73,16 @@ module.exports.isTbalAuthor = async (req, res, next) => {
     next();
 }
 
+module.exports.isMeatuphumAuthor = async (req, res, next) => {
+    const { id } = req.params;
+    const meatuphum = await Meatuphum.findById(id);
+    if (!meatuphum.author.equals(req.user._id)) {
+        req.flash('error', 'You do not have permission to do that!');
+        return res.redirect(`/meatuphums/${id}`);
+    }
+    next();
+}
+
 
 
 
@@ -69,6 +93,26 @@ module.exports.isReviewAuthor = async (req, res, next) => {
         req.flash('error', 'You do not have permission to do that!');
         return res.redirect(`/khmerfoods/${id}`);
     } 
+    next();
+}
+
+module.exports.isTbalReviewAuthor = async (req, res, next) => {
+    const { id, reviewId } = req.params;
+    const review = await Review.findById(reviewId);
+    if (!review.author.equals(req.user._id)) {
+        req.flash('error', 'You do not have permission to do that!');
+        return res.redirect(`/tbalkhmers/${id}`);
+    }
+    next();
+}
+
+module.exports.isMeatuphumReviewAuthor = async (req, res, next) => {
+    const { id, reviewId } = req.params;
+    const review = await Review.findById(reviewId);
+    if (!review.author.equals(req.user._id)) {
+        req.flash('error', 'You do not have permission to do that!');
+        return res.redirect(`/meatuphums/${id}`);
+    }
     next();
 }
 

@@ -19,6 +19,7 @@ const khmerfoodRoutes = require('./routes/khmerfoods');
 const reviewRoutes = require('./routes/reviews');
 const videoRoutes = require('./routes/videos');
 const tbalkhmerRoutes = require('./routes/tbalkhmers');
+const meatuphumRoutes = require('./routes/meatuphums');
 
 mongoose.connect('mongodb://127.0.0.1:27017/khmerfoods', {
     useNewUrlParser: true,
@@ -83,9 +84,12 @@ app.use((req, res, next) => {
 app.use('/', userRoutes);
 app.use('/khmerfoods', khmerfoodRoutes)
 app.use('/khmerfoods/:id/reviews', reviewRoutes)
-app.use('/videos', videoRoutes)
-app.use('/tbalkhmers', tbalkhmerRoutes)
 
+app.use('/tbalkhmers', tbalkhmerRoutes)
+app.use('/tbalkhmers/:id/reviews', reviewRoutes)
+app.use('/meatuphums', meatuphumRoutes)
+app.use('/meantuphums/:id/reviews', reviewRoutes)
+app.use('/videos', videoRoutes)
 
 app.get('/', (req, res) => {
     res.render('homes')

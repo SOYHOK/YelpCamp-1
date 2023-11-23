@@ -384,23 +384,33 @@ body {
     .form-popup {
       width: 70%; /* Make the form wider to fit better on small screens */
       height: 70%; /* Make form taller to fit better on small screens */
-      top: 48%; /* Adjust position */
+      top: 55%; /* Adjust position */
     }
   
     .form-container input, .form-container .btn {
       font-size: 1.2rem; /* Decrease font size for form inputs and buttons */
     }
+    .restuarants h1{
+        margin-top: 0px;
+    }
+    .restuarants .heading {
+        font-size: 3rem;
+    }
+    .heading span{
+        font-size: 3rem;
+    }
   
     .rest {
       flex-direction: column; /* Stack images vertically */
-      align-items: center; /* Center items */
-      margin: 2% 0; /* Adjust margin */
-      width: 60%;
+      align-items: center; /* Center items */ 
+      width: 100%;
+      margin-top: 10px;
     }
   
-    .rest img {
+    .rest .image {
       width: 100%; /* Make images full width */
       height: auto; /* Keep aspect ratio */
+      margin-top: 20px;
     }
   
     .image p {
@@ -428,17 +438,6 @@ body {
 
     
   }
-
-
-
-
-
-
-
-  
-
-
-
 
 
 

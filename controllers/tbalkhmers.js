@@ -16,7 +16,7 @@ module.exports.createTbalkhmer = async (req, res, next) => {
     tbalkhmer.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
     tbalkhmer.author = req.user._id;
     await tbalkhmer.save();
-    console.log(Tbalkhmer);
+    console.log(tbalkhmer);
     req.flash('success', 'Successfully made a new Tbalkhmer!');
     res.redirect(`/tbalkhmers/${tbalkhmer._id}`)
 }

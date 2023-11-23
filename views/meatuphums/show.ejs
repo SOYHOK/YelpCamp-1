@@ -4,7 +4,7 @@
 
     <div class="mb-3 text-center">
         <div class="carousel-inner">
-            <% for(let img of khmerfood.images) { %>
+            <% for(let img of meatuphum.images) { %>
             <div class="carousel-item active">
                 <img src="<%= img.url%>" alt="<%= %>" class="img-fluid" >
             </div>
@@ -12,25 +12,25 @@
         </div>
     </div> 
     <div class="mb-3">
-        <h2><%= khmerfood.title %></h2> 
+        <h2><%= meatuphum.title %></h2> 
     </div>
 
     <div class="mb-3 ml-3">
-        <p><%= khmerfood.description %></p>
+        <p><%= meatuphum.description %></p>
     </div>
 
     <div class="mb-3 ml-3">
-        <p>$ <%= khmerfood.price %></p>
+        <p>$ <%= meatuphum.price %></p>
     </div>
    
     <div class="col ml-3">
-        <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
-            <a href="/khmerfoods/<%= khmerfood._id %>/edit">Edit</a>
+        <% if (currentUser && currentUser._id.toString() === '655f2acdfa47605c348091d3') { %>
+            <a href="/meatuphums/<%= meatuphum._id %>/edit">Edit</a>
         <% } %>
     </div>
     <div class="col">
-        <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
-            <form action="/khmerfoods/<%= khmerfood._id %>?_method=DELETE" method="POST">
+        <% if (currentUser && currentUser._id.toString() === '655f2acdfa47605c348091d3') { %>
+            <form action="/meatuphums/<%= meatuphum._id %>?_method=DELETE" method="POST">
                 <button class="btn" onclick="Delete()" id="delete">Delete</button>
             </form>
         <% } %>
@@ -38,7 +38,7 @@
 
 
     <div class="mb-5 mt-4 ml-3">
-        <a href="/khmerfoods" class="back">Back</a>
+        <a href="/meatuphums" class="back">Back</a>
     </div>
 
 </div>

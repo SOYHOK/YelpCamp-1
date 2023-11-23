@@ -16,7 +16,7 @@ ImageSchema.virtual('thumbnail').get(function () {
 
 // const opts = { toJSON: { virtuals: true } }; // this is for virtuals to work with res.json
 
-const KhmerfoodSchema = new Schema({
+const MeatuphumSchema = new Schema({
     title: String,
     images: {
         type: [ImageSchema],
@@ -40,15 +40,15 @@ const KhmerfoodSchema = new Schema({
 }, );
 
 
-// khmerfoodSchema.virtual('properties.popUpMarkup').get(function () {
+// MeatuphumSchema.virtual('properties.popUpMarkup').get(function () {
 //     return `
-//     <strong><a href="/khmerfoods/${this._id}">${this.title}</a><strong>
+//     <strong><a href="/Meatuphums/${this._id}">${this.title}</a><strong>
 //     <p>${this.description.substring(0, 20)}...</p>`
 // });
 
 
 
-KhmerfoodSchema.post('findOneAndDelete', async function (doc) {
+MeatuphumSchema.post('findOneAndDelete', async function (doc) {
     if (doc) {
         await Review.deleteMany({
             _id: {
@@ -58,4 +58,4 @@ KhmerfoodSchema.post('findOneAndDelete', async function (doc) {
     }
 })
 
-module.exports = mongoose.model('Khmerfood', KhmerfoodSchema);
+module.exports = mongoose.model('Meatuphum', MeatuphumSchema);

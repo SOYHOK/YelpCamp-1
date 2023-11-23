@@ -1,5 +1,5 @@
 <% layout('layouts/boilerplate')%>
-<div class="addnew">
+<div class="addnew" style="width: 80%;">
     <h1>Details</h1>
 
     <div class="mb-3 text-center">
@@ -12,7 +12,7 @@
         </div>
     </div> 
     <div class="mb-3">
-        <h2><%= tbalkhmer.title %></h2>
+        <h2><%= tbalkhmer.title %></h2> 
     </div>
 
     <div class="mb-3 ml-3">
@@ -23,17 +23,17 @@
         <p>$ <%= tbalkhmer.price %></p>
     </div>
    
-    <div style="display: inline; text-align: start; justify-content: space-between;">
+    <div class="col ml-3">
         <% if (currentUser && currentUser._id.toString() === '655b2158c89efc6590c4012d') { %>
-        <a href="/tbalkhmers/<%= tbalkhmer._id %>/edit" class="d-inline text-start justify-content-between" id="edit">Edit</a>
+            <a href="/tbalkhmers/<%= tbalkhmer._id %>/edit">Edit</a>
         <% } %>
     </div>
-    <div style="display: inline; text-align: end; justify-content: space-between;">
-        <form action="/tbalkhmers/<%= tbalkhmer._id %>?_method=DELETE" method="POST" class="d-inline justify-content-between">
-            <% if (currentUser && currentUser._id.toString() === '655b2158c89efc6590c4012d') { %>
-            <button class="d-inline justify-content-between" onclick="Delete()" id="delete">Delete</button>
-            <% } %>
-        </form>
+    <div class="col">
+        <% if (currentUser && currentUser._id.toString() === '655b2158c89efc6590c4012d') { %>
+            <form action="/tbalkhmers/<%= tbalkhmer._id %>?_method=DELETE" method="POST">
+                <button class="btn" onclick="Delete()" id="delete">Delete</button>
+            </form>
+        <% } %>
     </div>
 
 

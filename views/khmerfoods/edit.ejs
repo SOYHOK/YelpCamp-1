@@ -1,65 +1,4 @@
 <% layout('layouts/boilerplate')%>
-<!-- <div class="row">
-    <h1 class="text-center">Edit khmerfood</h1>
-    <div class="col-md-6 offset-md-3">
-        <form action="/khmerfoods/<%=khmerfood._id%>?_method=PUT" method="POST" novalidate class="validated-form"
-            enctype="multipart/form-data">
-            <div class="mb-2">
-                <label class="form-label" for="title">Title</label>
-                <input class="form-control" type="text" id="title" name="khmerfood[title]"
-                    value="<%=khmerfood.title %>" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-
-            <div class="mb-2">
-                <label class="form-label" for="price">khmerfood Price</label>
-                <div class="input-group">
-                    <span class="input-group-text" id="price-label">$</span>
-                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
-                        aria-describedby="price-label" name="khmerfood[price]" value="<%=khmerfood.price %>"
-                        required><div class="valid-feedback">
-                        Looks good!
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-2">
-                <label class="form-label" for="description">Description</label>
-                <textarea class="form-control" type="text" id="description" name="khmerfood[description]"
-                    required><%= khmerfood.description%></textarea>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-            <div class="mb-2">
-                <div class="form-file custom-file">
-                    <input type="file" class="form-file-input" id="image" name="image" multiple>
-                    <label class="form-file-label" for="image">
-                        <span class="form-file-text custom-file-label">Add more image(s)...</span>
-                        <span class="form-file-button">Browse</span>
-                    </label>
-                </div>
-            </div>
-            <div class="mb-2">
-                <% khmerfood.images.forEach(function(img, i) {  %>
-
-                <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="">
-                <div class="form-check-inline">
-                    <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
-                </div>
-                <label for="image-<%=i%>">Delete?</label>
-                <% })%>
-            </div>
-            <div class="mb-2">
-                <button class="btn btn-info">Update khmerfood</button>
-            </div>
-        </form>
-        <a href="/khmerfoods/<%= khmerfood._id%>">Back To khmerfood</a>
-
-    </div>
-</div> -->
 
 <form action="/khmerfoods/<%= khmerfood._id %>?_method=PUT" method="POST" class="addnew" enctype="multipart/form-data">
     <h1>Edit</h1>
@@ -82,17 +21,6 @@
         </div>
     </div>
 
-    <!-- <div>
-        <label for="image">Image</label>
-        <input type="file" name="images" id="images" class="form-control" required multiple>  
-    </div>
-    <div class="carousel-inner">
-        <% for(let img of khmerfood.images) { %>
-        <div class="carousel-item active">
-            <img src="<%= img.url%>" alt="<%= %>" class="img-fluid w-50 h-50">
-        </div>
-        <% } %>
-    </div> -->
     <div>
         <label for="image">Image</label>
         <input type="file" name="images" id="images" class="form-control" multiple>  
