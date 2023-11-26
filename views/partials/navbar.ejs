@@ -12,11 +12,7 @@
         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
       </svg>
         <div class="sidebar">
-
-            <!-- <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-shopping-cart" id="count"></div> -->
-           
-            
+              
             <% if(!currentUser) {%>
             <a class="nav-link" id="active" href="/login">Login</a>
             <a class="nav-link" id="active" href="/register">Sign Up</a>
@@ -29,14 +25,125 @@
         </div>
 </header>
 
-<div id="orderForm" class="popup-form d-none">
-  <h1>Your Picked</h1>
+<!-- <div id="orderForm" class="popup-form">
+  <div>
+    <h3>Your Picked</h3>
+  </div>
+  <div>
+    <p>Cart is empty!</p>
+  </div>
+  <div class="total">Total:<span id="totalPrice"></span></div>
+  <button class="btn">checkout</button>
 
   
+</div> -->
+<div class="order">
+  <div  class="popup-form">
+    <div class="order-header">
+      <div class="card-title">
+       Your Picked
+      </div>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true" id="btn-close">&times;</span>
+      </button>
+    </div>
+
+    <div class="order-wrapper">
+      <!-- <div class="order-list">
+        <img src="../assets/images/food-3.png" alt="" width="50px">
+        <div class="title">dddgdg</div>
+        <span class="price">100</span>
+        <div class="qty">
+          <span class="qty">1</span>
+          <span class="x">x</span>
+          <span class="x">2</span>
+        </div>
+        <div class="delete">Delete</div>
+      </div>
+      <div class="order-list">
+        <img src="../assets/images/food-3.png" alt="" width="50px">
+        <div class="title">dddgdg</div>
+        <span class="price">100</span>
+        <div class="qty">
+          <span class="qty">1</span>
+          <span class="x">x</span>
+          <span class="x">2</span>
+        </div>
+        <div class="delete">Delete</div>
+      </div>
+      <div class="order-list">
+        <img src="../assets/images/food-3.png" alt="" width="50px">
+        <div class="title">dddgdg</div>
+        <span class="price">100</span>
+        <div class="qty">
+          <span class="qty">1</span>
+          <span class="x">x</span>
+          <span class="x">2</span>
+        </div>
+        <div class="delete">Delete</div>
+      </div>
+      <div class="order-list">
+        <img src="../assets/images/food-3.png" alt="" width="50px">
+        <div class="title">dddgdg</div>
+        <span class="price">100</span>
+        <div class="qty">
+          <span class="qty">1</span>
+          <span class="x">x</span>
+          <span class="x">2</span>
+        </div>
+        <div class="delete">Delete</div>
+      </div>
+      <div class="order-list">
+        <img src="../assets/images/food-3.png" alt="" width="50px">
+        <div class="title">dddgdg</div>
+        <span class="price">100</span>
+        <div class="qty">
+          <span class="qty">1</span>
+          <span class="x">x</span>
+          <span class="x">2</span>
+        </div>
+        <div class="delete">Delete</div>
+      </div>
+      <div class="order-list">
+        <img src="../assets/images/food-3.png" alt="" width="50px">
+        <div class="title">dddgdg</div>
+        <span class="price">100</span>
+        <div class="qty">
+          <span class="qty">1</span>
+          <span class="x">x</span>
+          <span class="x">2</span>
+        </div>
+        <div class="delete">Delete</div>
+      </div>
+      <div class="order-list">
+        <img src="../assets/images/food-3.png" alt="" width="50px">
+        <div class="title">dddgdg</div>
+        <span class="price">100</span>
+        <div class="qty">
+          <span class="qty">1</span>
+          <span class="x">x</span>
+          <span class="x">2</span>
+        </div>
+        <div class="delete">Delete</div>
+      </div> -->
+    </div>
+    <div class="order-bottom">
+      <div class="total">
+        <div class="total-left">Total</div>
+        <div class="total-right">90$</div>
+      </div>
+      <button class="btn-checkout">checkout</button>
+    </div>
+  </div>
 </div>
+<script >
+
+  //add to cart
+
+  
 
 
-<script>
+
 
 document.getElementById('menuButton').addEventListener('click', function() {
   var menuPopup = document.getElementById('menuPopup');
@@ -48,13 +155,13 @@ document.getElementById('menuButton').addEventListener('click', function() {
 });
 
 // Close the menu when user clicks outside of it
-window.addEventListener('click', function(event) {
-  var menuPopup = document.getElementById('menuPopup');
-  var menuButton = document.getElementById('menuButton');
-  if (event.target !== menuButton && event.target !== menuPopup) {
-    menuPopup.style.display = 'none';
-  }
-});
+// window.addEventListener('click', function(event) {
+//   var menuPopup = document.getElementById('menuPopup');
+//   var menuButton = document.getElementById('menuButton');
+//   if (event.target !== menuButton && event.target !== menuPopup) {
+//     menuPopup.style.display = 'none';
+//   }
+// });
 
 
 // Active route
@@ -68,24 +175,24 @@ for (var i = 0; i < menuLength; i++) {
 }
 
 
-// Search
+// // Search
 
-var searchBtn = document.getElementById('search-btn');
-var searchBar = document.querySelector('.search-data');
-var searchInput = document.querySelector('input');
+// var searchBtn = document.getElementById('search-btn');
+// var searchBar = document.querySelector('.search-data');
+// var searchInput = document.querySelector('input');
 
-searchBtn.addEventListener('click', function() {
-  searchBtn.classList.toggle('fa-times');
-  searchBar.classList.toggle('active');
-});
+// searchBtn.addEventListener('click', function() {
+//   searchBtn.classList.toggle('fa-times');
+//   searchBar.classList.toggle('active');
+// });
 
-searchInput.addEventListener('keyup', function(e) {
-  if (e.keyCode === 13) {
-    var searchValue = searchInput.value;
-    console.log(searchValue);
-    window.location.href = '/search?search=' + searchValue;
-  }
-});
+// searchInput.addEventListener('keyup', function(e) {
+//   if (e.keyCode === 13) {
+//     var searchValue = searchInput.value;
+//     console.log(searchValue);
+//     window.location.href = '/search?search=' + searchValue;
+//   }
+// });
 
 
 

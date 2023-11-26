@@ -17,30 +17,34 @@
                             <div class="carousel-inner">
                                 <% for(let img of khmerfood.images) { %>
                                 <div class="carousel-item active">
-                                    <img src="<%= img.url%>" alt="<%= %>" class="img-fluid">
+                                    <a href="/khmerfoods/<%= khmerfood._id %>">
+                                        <img src="<%= img.url%>" alt="<%= %>" id="image" class="img-fluid" >
+                                    </a>
                                 </div>
                                 <% } %>
                             </div>
-                           
                         </div>
                     </div>
 
                     <div class="col text-center" id="title"> 
-                        <a href="/khmerfoods/<%= khmerfood._id %>">
-                            <h2><%= khmerfood.title %></h2>
-                        </a>
+                        <!-- <a href="/khmerfoods/<%= khmerfood._id %>">
+                           <%= khmerfood.title %>
+                        </a> -->
+                        <%= khmerfood.title %>
                     </div>
-                    <div class="col">
-                        <p>
+                    <div class="col" id="desc">
                             <%= khmerfood.description %>
-                        </p>
+                        <!-- <p>
+                            <%= khmerfood.description %>
+                        </p> -->
                     </div>
-                    <div class="col">
-                        <p>$<%= khmerfood.price %>
-                        </p>
+                    <div class="col" id ="price">
+                        <!-- <p>$<%= khmerfood.price %>
+                        </p> -->
+                        $<%= khmerfood.price %>
                     </div>
                     <div class="mb-2">
-                        <button onclick="Addtochart()" id="addtochart">Add to Chart</button>
+                        <button  class="addtocard">Add to Cart</button>
                    </div>
                     <div style="display: inline; text-align: start; justify-content: space-between;">
                         <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
@@ -63,7 +67,9 @@
         <% } %>
 </div>
 
-    
+    <script>
+   
+    </script>
 <script>
     const khmerfoods = { features: <%- JSON.stringify(khmerfoods) %>} // convert to json
 </script>

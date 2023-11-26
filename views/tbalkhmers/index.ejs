@@ -17,7 +17,9 @@
                             <div class="carousel-inner">
                                 <% for(let img of tbalkhmer.images) { %>
                                 <div class="carousel-item active">
-                                    <img src="<%= img.url%>" alt="<%= %>" class="img-fluid">
+                                    <a href="/tbalkhmers/<%= tbalkhmer._id %>">
+                                        <img src="<%= img.url%>" alt="<%= %>" class="img-fluid">
+                                    </a>
                                 </div>
                                 <% } %>
                             </div>
@@ -40,7 +42,7 @@
                         </p>
                     </div>
                     <div class="mb-3">
-                        <button onclick="Addtochart()" id="addtochart">Add to Chart</button>
+                        <button  class="addtocard">Add to Cart</button>
                    </div>
                     <div style="display: inline; text-align: start; justify-content: space-between;">
                         <% if (currentUser && currentUser._id.toString() === '655b2158c89efc6590c4012d') { %>
@@ -62,8 +64,7 @@
 
         <% } %>
 </div>
-
     
-<script>
+<script >
     const tbalkhmers = { features: <%- JSON.stringify(tbalkhmers) %>} // convert to json
 </script>

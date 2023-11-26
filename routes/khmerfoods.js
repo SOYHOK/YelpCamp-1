@@ -12,6 +12,7 @@ const upload = multer({ storage });
 const Khmerfood = require('../models/khmerfood');
 
 router.route('/')
+    // .get( catchAsync(khmerfoods.index))
     .get(isLoggedIn, catchAsync(khmerfoods.index))
     .post(isLoggedIn, upload.array('images'), validateKhmerfood, catchAsync(khmerfoods.createKhmerfood))
 
