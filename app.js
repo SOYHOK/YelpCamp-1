@@ -18,8 +18,8 @@ const userRoutes = require('./routes/users');
 const khmerfoodRoutes = require('./routes/khmerfoods');
 const reviewRoutes = require('./routes/reviews');
 const videoRoutes = require('./routes/videos');
-const tbalkhmerRoutes = require('./routes/tbalkhmers');
 const meatuphumRoutes = require('./routes/meatuphums');
+const tbalkhmerRoutes = require('./routes/talkhmers')
 
 mongoose.connect('mongodb://127.0.0.1:27017/khmerfoods', {
     useNewUrlParser: true,

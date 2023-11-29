@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Raleway:wght@600&family=Roboto:wght@400;500&display=swap');
 
 :root {
-    --brown: #a52a2a;
+    --brown: rgb(153, 55, 55);
     --orange: #ff7800;
     --black: #130f40;
     --light-color: #e0e0e0;
@@ -70,6 +70,10 @@ body {
 
 .heading span {
     color: var(--orange);
+}
+
+#detail{
+    width: 50%;
 }
 
 .addnew{
@@ -240,7 +244,7 @@ h2{
 }
 
 #edit{
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
     box-shadow: var(--box-shadow);
     padding: 0.5rem 2.7rem;
@@ -263,7 +267,7 @@ h2{
 }
 
 #delete{
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
     box-shadow: var(--box-shadow);
     padding: 0.5rem 2.7rem;
@@ -316,6 +320,7 @@ padding: 5px 75px;
 border-radius: 5px 35px;
 background-color: var(--orange);
 color: white;
+margin-top: 5px;
 }
 .view .addtocard:hover{
     background-color: #fd9132;
@@ -361,58 +366,9 @@ html{
     font-size: 62.5%;
 }
 
-/* .ordermenu{
-    position: fixed;
-    font-size: 1.5rem;
-    box-shadow: var(--box-shadow);
-    padding: 3rem 2rem;
-    width: 300px;
-    top: 0;
-    right: 0;
-    min-height: 100%;
-    background-color: var(--light-color);
-    z-index: 3;
-    margin-top: 8rem;
-} */
 
-/* .ordermenu .close{
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 2rem;
-    color: var(--orange);
-    cursor: pointer;
-}
-
-.ordermenu .close:hover{
-    color: var(--brown);
-}
-
-.ordermenu .ordermenu-title{
-    text-align: center;
-    font-size: 2rem;
-    color: var(--brown);
-    padding: 1rem 0;
-}
-
-.ordermenu .ordermenu-title span{
-    color: var(--orange);
-}
-
-.ordermenu .ordermenu-content{
-    margin-top: 2rem;
-}
-
-.ordermenu .ordermenu-content .ordermenu-item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-} */
 .news{
     text-align: center;
-    margin-top: 120px;
-    
 }
 .news a{
     text-decoration: none !important;
@@ -436,6 +392,13 @@ h1{
     color: var(--brown);
     margin-top: 10px;
 }
+.wrap_food{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+}
 
 .addnew h2{
     display: block;
@@ -450,21 +413,20 @@ h1{
 .addnew{
     box-shadow: var(--box-shadow);
     padding: 0.5rem 2.7rem;
-    border-radius: 0.5rem;
-    width: 100%;
-    
-    /* background: var(--light-color); */
-
-    
+    border-radius: 0.5rem; 
+    z-index: 999; 
 }
+#detail{
+    width: 100%;
+}
+
 p{
     font-size: 1.5rem;
 }
 
 .single_food{
-    width: 370px;
-    height: 400px;
-    margin-top: 30px;
+    width: 350px;
+    height: 450px;
 
 }
 
@@ -482,8 +444,8 @@ p{
 }
 
 .view .img-fluid{
-    height: 200px;
-    width: 370px;
+    height: auto;
+    width: 100%;
     border-radius: 15px 50px;
 
 
@@ -492,13 +454,14 @@ p{
 }
 .view .addtocard{
 
-padding: 5px 108px;
+padding: 5px 103px;
+margin-top: 5px;
 
 }
 .view .addtocard:hover{
     background-color: #fd9132;
     color: white;
-    padding: 5px 108px;
+    padding: 5px 102px;
     border-radius: 5px 35px;
 }
 
@@ -526,12 +489,12 @@ padding: 5px 108px;
     }
     
     .addnew{
-        margin-top: 30px;
         margin-bottom: 20px;
         box-shadow: var(--box-shadow);
         padding: 0.5rem 2.7rem;
         border-radius: 0.5rem;
         width: 100%;
+        
         
         /* background: var(--light-color); */
         
@@ -565,7 +528,6 @@ padding: 5px 108px;
 
     .addnew .btn{
         display: flex;
-        margin-top: 20px;
         background-color: var(--brown);
         color: white;
         font-size: 1rem;
@@ -641,9 +603,11 @@ padding: 5px 108px;
     }
 
 #cart{
-    margin-top: 5px;
-    margin-left: 27px;
-    margin-right: 30px;
+    margin-top: 3px;
+    
+}
+.countItem{
+    margin-top: 0px;
 }
     
 }

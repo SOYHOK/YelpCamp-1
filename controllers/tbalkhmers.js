@@ -11,13 +11,13 @@ module.exports.renderNewForm = (req, res) => {
     res.render('tbalkhmers/new');
 }
 
-module.exports.createTbalkhmer = async (req, res, next) => {
-    const tbalkhmer = new Tbalkhmer(req.body.Tbalkhmer);
+module.exports.createTbalkhmer = async (req, res) => {
+    const tbalkhmer = new Tbalkhmer(req.body.tbalkhmer);
     tbalkhmer.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
     tbalkhmer.author = req.user._id;
     await tbalkhmer.save();
     console.log(tbalkhmer);
-    req.flash('success', 'Successfully made a new Tbalkhmer!');
+    req.flash('success', 'Successfully made a new tbalkhmer!');
     res.redirect(`/tbalkhmers/${tbalkhmer._id}`)
 }
 
@@ -29,7 +29,7 @@ module.exports.showTbalkhmer = async (req, res,) => {
         }
     }).populate('author');
     if (!tbalkhmer) {
-        req.flash('error', 'Cannot find that Tbalkhmer!');
+        req.flash('error', 'Cannot find that tbalkhmer!');
         return res.redirect('/tbalkhmers');
     }
     res.render('tbalkhmers/show', { tbalkhmer });
@@ -48,7 +48,7 @@ module.exports.renderEditForm = async (req, res) => {
 module.exports.updateTbalkhmer = async (req, res) => {
     const { id } = req.params;
     console.log(req.body);
-    const tbalkhmer = await Tbalkhmer.findByIdAndUpdate(id, { ...req.body.Tbalkhmer });
+    const tbalkhmer = await Tbalkhmer.findByIdAndUpdate(id, { ...req.body.tbalkhmer });
     const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
     tbalkhmer.images.push(...imgs);
     await tbalkhmer.save();
@@ -58,13 +58,15 @@ module.exports.updateTbalkhmer = async (req, res) => {
         }
         await tbalkhmer.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
     }
-    req.flash('success', 'Successfully updated Tbalkhmer!');
+    req.flash('success', 'Successfully updated tbalkhmer!');
     res.redirect(`/tbalkhmers/${tbalkhmer._id}`)
 }
 
 module.exports.deleteTbalkhmer = async (req, res) => {
     const { id } = req.params;
     await Tbalkhmer.findByIdAndDelete(id);
-    req.flash('success', 'Successfully deleted Tbalkhmer')
+    req.flash('success', 'Successfully deleted tbalkhmer')
     res.redirect('/tbalkhmers');
 }
+
+

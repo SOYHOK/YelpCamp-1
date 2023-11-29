@@ -2,7 +2,7 @@
 /* General styles */
 
 :root {
-    --brown: #a52a2a;
+    --brown: rgb(153, 55, 55);
     --orange: #ff7800;
     --black: #130f40;
     --light-color: #e0e0e0;
@@ -39,12 +39,6 @@
     background-color: white;
   }
   
-  /* Active state */
-  
-  .active {
-    color: #ff7800 !important;
-  }
-
 
   /* Home section */
   
@@ -54,7 +48,8 @@
     align-items: center;
     background: var(--brown);
     color: white;
-    border-radius: 30px;
+    border-radius: 15px 45px;
+    margin-top: 60px;
   }
   
   .home-left-side h1 {
@@ -106,6 +101,7 @@
       flex-direction: column; /* Display flex items vertically on small screens */
       text-align: center; /* Center align text */
       border-radius: 10px 45px;
+      margin-top: 20px;
     }
   
     .home-left-side h1 {

@@ -12,6 +12,7 @@ const upload = multer({ storage });
 const Meatuphum = require('../models/meatuphum');
 
 router.route('/')
+    // .get( catchAsync(meatuphums.index))
     .get(isLoggedIn, catchAsync(meatuphums.index))
     .post(isLoggedIn, upload.array('images'), validateMeatuphum, catchAsync(meatuphums.createMeatuphum))
 
@@ -20,11 +21,10 @@ router.get('/new', isLoggedIn,  meatuphums.renderNewForm)
 
 router.route('/:id')
     .get(isLoggedIn, catchAsync(meatuphums.showMeatuphum))
-    .post(isLoggedIn, isMeatuphumAuthor, upload.array('images'), validateMeatuphum, catchAsync(meatuphums.createMeatuphum))
-    .put(isLoggedIn, isMeatuphumAuthor, catchAsync(meatuphums.updateMeatuphum))
+    .put(isLoggedIn, isMeatuphumAuthor, upload.array('images'), validateMeatuphum, catchAsync(meatuphums.updateMeatuphum))
+    .delete(isLoggedIn, isMeatuphumAuthor, catchAsync(meatuphums.deleteMeatuphum));
 
 router.get('/:id/edit', isLoggedIn, isMeatuphumAuthor, catchAsync(meatuphums.renderEditForm))
-
 
 
 

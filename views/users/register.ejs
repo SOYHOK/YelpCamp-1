@@ -1,5 +1,5 @@
 <% layout('layouts/boilerplate')%>
-<div class="form-popup" id="myForm">
+<!-- <div class="form-popup" id="myForm">
     <form action="/register" method="POST" class="form-container" novalidate>
         <h1>Sign Up</h1>
         <div class="mb-2">
@@ -31,5 +31,47 @@
             </div>
         </div>
         <button class="btn" onclick="registerUser()">Register</button>
+    </form>
+</div> -->
+
+<div class="form-popup" id="myForm">
+    <form action="/login" method="POST" class="form-container" id="loginForm">
+        <div class="form-header">
+            <h1>Sign up</h1>
+        </div>
+        <div class="form-content">
+            <div class="form-input">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                <div class="invalid-feedback">
+                    Username is required.
+                </div>
+            </div>
+            <div class="form-input">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <div class="invalid-feedback">
+                    Email is required.
+                </div>
+            </div>
+            <div class="form-input">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <div class="invalid-feedback">
+                    Password must be at least 8 characters and include one uppercase letter, lowercase letter, and special character.
+                </div>
+            </div>
+            <div class="form-input">
+                <label for="confirmPassword">Confirm Password</label>
+                <input class="" type="password" id="confirmPassword" name="confirmPassword" required>
+                <div class="invalid-feedback">
+                    Passwords must match.
+                </div>
+            </div>
+        </div>
+        <div class="form-bottom">
+            <button class="btn-login" type="submit" onclick="registerUser()">Sign Up</button>
+            <p><a href="/login" class="forgot-pass">Already have account?</a></p>
+        </div>
     </form>
 </div>

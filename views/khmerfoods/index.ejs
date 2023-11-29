@@ -9,7 +9,7 @@
 
 <div class="row mt-4 wrap_food">
     <% for (let khmerfood of khmerfoods) { %>
-        <div class="col-sm-8 col-md-6 col-lg-4 col-xl-3 single_food">
+        <div  class="col-sm-8 col-md-6 col-lg-4 col-xl-3 single_food "data-id ="<%= khmerfood._id %>">
             <div class="view">
                 <div class="col">
                     <div class="col">
@@ -38,10 +38,10 @@
                             <%= khmerfood.description %>
                         </p> -->
                     </div>
-                    <div class="col" id ="price">
+                    <div class="col">
                         <!-- <p>$<%= khmerfood.price %>
                         </p> -->
-                        $<%= khmerfood.price %>
+                        $<span id ='price'><%= khmerfood.price %></span>
                     </div>
                     <div class="mb-2">
                         <button  class="addtocard">Add to Cart</button>

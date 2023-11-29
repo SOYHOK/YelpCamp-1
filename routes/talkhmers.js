@@ -12,6 +12,7 @@ const upload = multer({ storage });
 const Tbalkhmer = require('../models/tbalkhmer');
 
 router.route('/')
+    // .get( catchAsync(tbalkhmers.index))
     .get(isLoggedIn, catchAsync(tbalkhmers.index))
     .post(isLoggedIn, upload.array('images'), validateTbalkhmer, catchAsync(tbalkhmers.createTbalkhmer))
 
@@ -24,6 +25,7 @@ router.route('/:id')
     .delete(isLoggedIn, isTbalAuthor, catchAsync(tbalkhmers.deleteTbalkhmer));
 
 router.get('/:id/edit', isLoggedIn, isTbalAuthor, catchAsync(tbalkhmers.renderEditForm))
+
 
 
 

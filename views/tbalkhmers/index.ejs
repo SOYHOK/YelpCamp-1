@@ -9,39 +9,41 @@
 
 <div class="row mt-4 wrap_food">
     <% for (let tbalkhmer of tbalkhmers) { %>
-        <div class="col-sm-8 col-md-6 col-lg-4 col-xl-3 single_food">
+        <div  class="col-sm-8 col-md-6 col-lg-4 col-xl-3 single_food "data-id ="<%= tbalkhmer._id %>">
             <div class="view">
                 <div class="col">
                     <div class="col">
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <div class="carousel-inner">
                                 <% for(let img of tbalkhmer.images) { %>
                                 <div class="carousel-item active">
                                     <a href="/tbalkhmers/<%= tbalkhmer._id %>">
-                                        <img src="<%= img.url%>" alt="<%= %>" class="img-fluid">
+                                        <img src="<%= img.url%>" alt="<%= %>" id="image" class="img-fluid" >
                                     </a>
                                 </div>
                                 <% } %>
                             </div>
-                           
                         </div>
                     </div>
 
-                    <div class="col text-center" id="title">
-                        <a href="/tbalkhmers/<%= tbalkhmer._id %>">
-                            <h2><%= tbalkhmer.title %></h2>
-                        </a>
+                    <div class="col text-center" id="title"> 
+                        <!-- <a href="/tbalkhmers/<%= tbalkhmer._id %>">
+                           <%= tbalkhmer.title %>
+                        </a> -->
+                        <%= tbalkhmer.title %>
                     </div>
-                    <div class="col">
-                        <p>
+                    <div class="col" id="desc">
                             <%= tbalkhmer.description %>
-                        </p>
+                        <!-- <p>
+                            <%= tbalkhmer.description %>
+                        </p> -->
                     </div>
                     <div class="col">
-                        <p>$<%= tbalkhmer.price %>
-                        </p>
+                        <!-- <p>$<%= tbalkhmer.price %>
+                        </p> -->
+                        $<span id ='price'><%= tbalkhmer.price %></span>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <button  class="addtocard">Add to Cart</button>
                    </div>
                     <div style="display: inline; text-align: start; justify-content: space-between;">
@@ -64,7 +66,11 @@
 
         <% } %>
 </div>
-    
-<script >
+
+    <script>
+   
+    </script>
+<script>
     const tbalkhmers = { features: <%- JSON.stringify(tbalkhmers) %>} // convert to json
 </script>
+

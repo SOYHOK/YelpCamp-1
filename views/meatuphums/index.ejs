@@ -9,40 +9,42 @@
 
 <div class="row mt-4 wrap_food">
     <% for (let meatuphum of meatuphums) { %>
-        <div class="col-sm-8 col-md-6 col-lg-4 col-xl-3 single_food">
+        <div  class="col-sm-8 col-md-6 col-lg-4 col-xl-3 single_food "data-id ="<%= meatuphum._id %>">
             <div class="view">
                 <div class="col">
                     <div class="col">
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <div class="carousel-inner">
                                 <% for(let img of meatuphum.images) { %>
                                 <div class="carousel-item active">
                                     <a href="/meatuphums/<%= meatuphum._id %>">
-                                        <img src="<%= img.url%>" alt="<%= %>" id="image" class="img-fluid">
+                                        <img src="<%= img.url%>" alt="<%= %>" id="image" class="img-fluid" >
                                     </a>
                                 </div>
                                 <% } %>
                             </div>
-                           
                         </div>
                     </div>
 
-                    <div class="col text-center" id="title">
-                        <a href="/meatuphums/<%= meatuphum._id %>">
-                            <h2><%= meatuphum.title %></h2>
-                        </a>
+                    <div class="col text-center" id="title"> 
+                        <!-- <a href="/meatuphums/<%= meatuphum._id %>">
+                           <%= meatuphum.title %>
+                        </a> -->
+                        <%= meatuphum.title %>
                     </div>
                     <div class="col" id="desc">
-                        <p>
                             <%= meatuphum.description %>
-                        </p>
+                        <!-- <p>
+                            <%= meatuphum.description %>
+                        </p> -->
                     </div>
-                    <div class="col" id="price">
-                        <p>$<%= meatuphum.price %>
-                        </p>
+                    <div class="col">
+                        <!-- <p>$<%= meatuphum.price %>
+                        </p> -->
+                        $<span id ='price'><%= meatuphum.price %></span>
                     </div>
-                    <div class="mb-3">
-                        <button onclick="addToCartClicked()"class="addtocard">Add to Cart</button>
+                    <div class="mb-2">
+                        <button  class="addtocard">Add to Cart</button>
                    </div>
                     <div style="display: inline; text-align: start; justify-content: space-between;">
                         <% if (currentUser && currentUser._id.toString() === '655f2acdfa47605c348091d3') { %>
@@ -65,7 +67,9 @@
         <% } %>
 </div>
 
-    
+    <script>
+   
+    </script>
 <script>
     const meatuphums = { features: <%- JSON.stringify(meatuphums) %>} // convert to json
 </script>

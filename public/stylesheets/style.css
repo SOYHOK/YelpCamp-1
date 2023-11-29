@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Raleway:wght@600&family=Roboto:wght@400;500&display=swap');
  
          :root{
-            --brown: #a52a2a;
+            --brown: rgb(153, 55, 55);
             --orange: #ff7800;
             --black: #130f40;
             --light-color: #e0e0e0;
@@ -78,76 +78,3 @@
 
         
 
-
-    /* .popup-form{
-        position: fixed;
-        font-size: 1.5rem;
-        box-shadow: var(--box-shadow);
-        padding: 3rem 2rem;
-        width: 300px;
-        top: 0;
-        right: 0;
-        min-height: 100%;
-        background-color: var(--light-color);
-        z-index: 3;
-        margin-top: 8rem;
-
-    }
-
-
-
-    @media screen {
-        html{
-            font-size: 62.5%;
-        }
-
-        .popup-form{
-            position: fixed;
-            font-size: 1.5rem;
-            box-shadow: var(--box-shadow);
-            padding: 3rem 2rem;
-            width: 300px;
-            top: 0;
-            right: 0;
-            min-height: 100%;
-            background-color: var(--light-color);
-            z-index: 3;
-            margin-top: 8rem;
-        }
-
-        .popup-form .close{
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 2rem;
-            color: var(--orange);
-            cursor: pointer;
-        }
-
-        .popup-form .close:hover{
-            color: var(--brown);
-        }
-
-        .popup-form .popup-form-title{
-            text-align: center;
-            font-size: 2rem;
-            color: var(--brown);
-            padding: 1rem 0;
-        }
-
-        .popup-form .popup-form-title span{
-            color: var(--orange);
-        }
-
-        .popup-form .popup-form-content{
-            margin-top: 2rem;
-        }
-
-        .popup-form .popup-form-content .popup-form-item{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-    } */
