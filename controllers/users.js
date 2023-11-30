@@ -33,7 +33,7 @@ module.exports.login = (req, res) => {
         res.redirect('/tbalkhmers');
     }else if(user.id === '655f2acdfa47605c348091d3'){
         res.redirect('/meatuphums');
-    }else if(user.id === '652463cce658bebe7040a883') {
+    }else if(user.id === '656826beb627522488c1dfa0') {
         res.redirect('/khmerfoods');
     } else{
         res.redirect('/home');

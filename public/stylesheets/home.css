@@ -2,7 +2,7 @@
 /* General styles */
 
 :root {
-    --brown: rgb(153, 55, 55);
+    --brown: #a52a2a;
     --orange: #ff7800;
     --black: #130f40;
     --light-color: #e0e0e0;
@@ -49,26 +49,34 @@
     background: var(--brown);
     color: white;
     border-radius: 15px 45px;
-    margin-top: 60px;
+    width: 90%;
+    height: 500px;
+    margin-top: 100px;
+  }
+  .home-right-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   
   .home-left-side h1 {
     font-size: 4rem;
     margin-left: 60px;
-    color: white;
-    width: 60%;
+    color: var(--orange);
+    width: 50%;
   }
   
   .home-left-side p {
     font-size: 1.5rem;
     margin-top: 2rem;
-    width: 60%;
+    width: 50%;
     margin-left: 80px;
   }
   
   .home-right-side img {
     width: 450px;
-    margin-right: 40px;
+    margin-right: 60px;
     margin-top: 60px;
   }
   
@@ -98,10 +106,14 @@
     }
   
     .home {
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-direction: column; /* Display flex items vertically on small screens */
       text-align: center; /* Center align text */
       border-radius: 10px 45px;
-      margin-top: 20px;
+      margin-top: 40px;
     }
   
     .home-left-side h1 {
@@ -120,9 +132,13 @@
   
     .home-right-side img {
       width: 60%; /* Make the image responsive */
-      margin-left: 50px;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      margin: 0 auto;
   
     }
   

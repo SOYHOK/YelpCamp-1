@@ -91,7 +91,7 @@
           <label for="address"> Address</label>
           <input type="text" id="address" name="user[address]" placeholder="Your address..">
     </div>
-    <button type="submit" class="user-sub">Submit</button>
+    <button type="submit" class="user-sub" onclick="sub()">Submit</button>
     </div>
   </form>
 
@@ -105,7 +105,26 @@
 
   //add to cart
 
+  function sub() {
+  // Get the form element
+  var form = document.querySelector('.contact');
 
+  // Add an event listener to the form's submit event
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent the form from submitting normally
+
+    // Get the input values
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var address = document.getElementById('address').value;
+
+    // Perform any necessary validation here
+
+    // Redirect to another page
+    window.location.href = "http://localhost:3000/order"; // Replace with your desired URL
+  });
+}
 
 
 

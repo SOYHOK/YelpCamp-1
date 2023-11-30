@@ -129,12 +129,15 @@ const AddItemToHTMLCart =()=>{
                         <button class="btn-minus">-</button>
                         <span class='quantity'>${item.qty}</span>
                         <button class="btn-plus">+</button>
+                        <button class="btn-minus" id="minus-delete">Delete</button>
                     </div>
                 </div>
-                <div class="btn-delete">Delete</div>
+                
               </div>
         `;
         ADDTCartoHtml.appendChild(cartRow);
     })
 
 }
+
+

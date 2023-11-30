@@ -1,6 +1,6 @@
 <% layout('layouts/boilerplate')%>
 <div class="news ">
-    <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
+    <% if (currentUser && currentUser._id.toString() === '656826beb627522488c1dfa0') { %>
     <a href="/khmerfoods/new">Add Food</a>
     <% } %>
 </div>
@@ -47,13 +47,13 @@
                         <button  class="addtocard">Add to Cart</button>
                    </div>
                     <div style="display: inline; text-align: start; justify-content: space-between;">
-                        <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
+                        <% if (currentUser && currentUser._id.toString() === '656826beb627522488c1dfa0') { %>
                         <a href="/khmerfoods/<%= khmerfood._id %>/edit" class="d-inline text-start justify-content-between" id="edit">Edit</a>
                         <% } %>
                     </div>
                     <div style="display: inline; text-align: end; justify-content: space-between;">
                         <form action="/khmerfoods/<%= khmerfood._id %>?_method=DELETE" method="POST" class="d-inline justify-content-between">
-                            <% if (currentUser && currentUser._id.toString() === '652463cce658bebe7040a883') { %>
+                            <% if (currentUser && currentUser._id.toString() === '656826beb627522488c1dfa0') { %>
                             <button class="d-inline justify-content-between" onclick="Delete()" id="delete">Delete</button>
                             <% } %>
                         </form>

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Raleway:wght@600&family=Roboto:wght@400;500&display=swap');
 
 :root {
-    --brown: rgb(153, 55, 55);
+    --brown: #a52a2a;
     --orange: #ff7800;
     --black: #130f40;
     --light-color: #e0e0e0;
@@ -47,7 +47,7 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: rgb(153, 55, 55);
+    background-color: var(--brown);
 }
 .header-container{
     width: 80%;
@@ -56,7 +56,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(153, 55, 55);
+    background-color: var(--brown);
 }
 .navbar a {
     font-size: 1.7rem;
@@ -83,7 +83,7 @@ body {
 .navbar{
     display: flex;
     align-items: center;
-    background-color: rgb(153, 55, 55);
+    background-color: var(--brown);
 }
 .header .navbar a:hover {
     color: var(--orange);
@@ -399,9 +399,10 @@ color: #ff7800;
     margin-left: 20px;
 }
 .order-list .qty{
+    width: auto;
     font-size: 1.5rem;
-    margin-right: 10px;
-    margin-left: 20px;
+    margin-right: 5px;
+    margin-left: 10px;
 }
 .order-list span{
     font-size: 1.5rem;
@@ -455,7 +456,8 @@ color: #ff7800;
     background-color: var(--brown);
     border: 1px solid var(--orange);
     color: #fff;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: 5px;
 }
 .btn-checkout:hover{
     background-color: rgb(187, 52, 52);
@@ -539,7 +541,22 @@ color: #ff7800;
     color: #e0e0e0;
     border-radius: 10px;
 }
-
+.quantity{
+    color: #fff;
+}
+.btn-plus{
+    color: #fff;
+    display: flex;
+}
+.btn-minus{
+    color: #fff;
+    display: flex;
+}
+#minus-delete{
+    color: #fff;
+    display: flex;
+    
+}
 /* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
     html {
@@ -708,6 +725,7 @@ color: #ff7800;
         margin-left: 5px;
     }
     .order-list .qty{
+        width: 30px;
         font-size: 1.2rem;
         margin-right: 3px;
         margin-left: 3px;
@@ -723,6 +741,10 @@ color: #ff7800;
         display: flex;
     }
     .btn-minus{
+        color: #fff;
+        display: flex;
+    }
+    #minus-delete{
         color: #fff;
         display: flex;
     }
@@ -751,12 +773,11 @@ color: #ff7800;
         height: 12vh;
         display: flex;
         flex-direction: column;
-        color: white;
         justify-content: space-between;
         border-top: 1px solid var(--orange);
     }
     .total{
-        margin: 2px;
+        margin: 5px 5px;
         font-size: 1.5rem;
         display: flex;
         justify-content: center;
@@ -771,7 +792,11 @@ color: #ff7800;
         border: 1px solid var(--orange);
         border-radius: 5px;
         color: #fff;
-        margin-top: auto;
+        margin-top: 0;
+    }
+    .btn-checkout:hover{
+        background-color: rgb(187, 52, 52);
+        border: 1px solid var(--brown);
     }
     
     .icon{
